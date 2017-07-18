@@ -14,38 +14,88 @@
 				</div>
 				<div class="blog-content popup-gallery be-large-post-align">
 					<h5 class="be-post-title to">
-						Integer Blandit Velit Nec Purus Convallis
+						{{ $user->fname }}的介绍
 					</h5>
 
-					<span class="be-text-tags">
+					<!-- <span class="be-text-tags">
 						<a href="blog-detail-2.html" class="be-post-tag">Interactiob design</a>, 
 						<a href="blog-detail-2.html" class="be-post-tag">UI/UX</a>,  
 						<a href="blog-detail-2.html" class="be-post-tag">Web Design</a>
-					</span>
+					</span> -->
 					<div class="clear"></div>
 					<div class="post-text">
-						<p>Fusce dolor libero, efficitur et lobortis at, faucibus nec nunc. Proin fermentum turpis eget nisi facilisis lobortis. Praesent malesuada facilisis maximus. Donec sed lobortis tortor. Ut nec lacinia sapien, sit amet dapibus magna. Vestibulum nunc ex, tempus et volutpat nec, convallis ut massa. Sed ultricies luctus ipsum in placerat.
-
-						<p>Mauris ultrices pharetra lectus sit amet commodo. Fusce ac sagittis magna. Nulla sed ligula sed dui tristique convallis non sit amet dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+						<div class="be-large-post-slider type-wide">
+							<div class="swiper-container thumbnails-preview" data-autoplay="0" data-loop="1" data-speed="500" data-center="0" data-slides-per-view="1">
+				                <div class="swiper-wrapper">
+			                    	<div class="swiper-slide active" data-val="0">
+			                    		 <img class="img-responsive img-full" src="/img/sample/1.jpg" alt="">
+			                    		 <div class="slider-text">{{ $user->description }}</div>
+			                    	</div>
+			                    	<div class="swiper-slide" data-val="1">
+			                    		 <img class="img-responsive img-full" src="/img/sample/2.jpg" alt="">
+			                    		 <div class="slider-text">{{ $user->description }}</div>			                    		 
+			                    	</div>
+			                    	<div class="swiper-slide" data-val="2">
+			                    		 <img class="img-responsive img-full" src="/img/sample/1.jpg" alt="">
+			                    		 <div class="slider-text">{{ $user->description }}</div>			                    		 
+			                    	</div>
+			                    	<div class="swiper-slide" data-val="3">
+			                    		 <img class="img-responsive img-full" src="/img/sample/1.jpg" alt="">
+			                    		 <div class="slider-text">{{ $user->description }}</div>			                    		 
+			                    	</div>
+			                    	<div class="swiper-slide" data-val="4">
+			                    		 <img class="img-responsive img-full" src="/img/sample/5.jpg" alt="">
+			                    		 <div class="slider-text">{{ $user->description }}</div>			                    		 
+			                    	</div>
+			                    </div>
+				                <div class="pagination hidden"></div>
+				                <div class="swiper-arrow-left type-2"></div>
+				                <div class="swiper-arrow-right type-2"></div>
+				            </div>
+				            <div class="swiper-container thumbnails" data-autoplay="0" 
+				            data-loop="0" data-speed="500" data-center="0" 
+				            data-slides-per-view="responsive" data-xs-slides="3" 
+				            data-sm-slides="5" data-md-slides="5" data-lg-slides="5" 
+				            data-add-slides="5">
+				                <div class="swiper-wrapper">
+									<div class="swiper-slide current active" data-val="0">
+										<img src="/img/sample/1.jpg" alt="">
+									</div>
+									<div class="swiper-slide" data-val="1">
+										<img src="/img/sample/2.jpg" alt="">
+									</div>
+									<div class="swiper-slide" data-val="2">
+										<img src="/img/sample/3.jpg" alt="">
+									</div>
+									<div class="swiper-slide" data-val="3">
+										<img src="/img/sample/4.jpg" alt="">
+									</div>
+									<div class="swiper-slide" data-val="4">
+										<img src="/img/sample/5.jpg" alt="">
+									</div>
+								</div>
+								<div class="pagination hidden"></div>
+							</div>
+						</div>
+						
+					</div>
+					<div class="post-text">
+						<p>
+							{{ $user->description }}
+						</p>
 
 						<div class="image-block">
-						    <a class="popup-a" href="img/l1.jpg">
-							<img src="/img/l1.jpg" alt="">
+						    <a class="popup-a" href="/img/sample/1.jpg">
+								<img src="/img/sample/1.jpg" alt="">
 							</a>
-							<div class="image-text">Ut pulvinar tellus sed elit luctus aliquet. Suspendisse hendrerit sapien a aliquet porttitor. In hendrerit consequat neque eget egestas. In a consectetur felis. In euismod lectus eros, quis sollicitudin diam tincidunt sed. Duis rhoncus nunc in lobortis lacinia.</div>
+							<div class="image-text">{{ $user->description }}</div>
 						</div>
-						    <a class="popup-a" href="img/l2.jpg">
-							<img src="/img/l2.jpg" alt="">
-							</a>								
-
-						<p>Mauris sodales tellus vel felis dapibus, sit amet porta nibh egestas. Sed dignissim tellus quis sapien sagittis cursus. Cras porttitor auctor sapien, eu tempus nunc placerat nec. Donec metus tortor, dignissim at vehicula ac, lacinia vel massa. Quisque mollis dui lacus, et fermentum erat euismod in. Integer sit amet augue ligula.</p>
-
-						<div class="image-block">
-							    <a class="popup-a" href="img/l3.jpg">
-								<img src="/img/l3.jpg" alt="">
-								</a>
-							<div class="image-text">Integer blandit velit nec purus convallis ullamcorper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In blandit porttitor urna, eu ultrices enim volutpat ut.</div>									
-						</div>
+					    <a class="popup-a" href="/img/sample/2.jpg">
+							<img src="/img/sample/2.jpg" alt="">
+						</a>								
+						<br>
+						<br>
+						<p>{{ $user->description }}</p>								
 					</div>
 				</div>
 				<div class="be-large-post-align">
