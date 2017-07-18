@@ -8,11 +8,6 @@ window._ = require('lodash');
  */
 
 try {
-    global.$ = global.jQuery = require('jquery');
-    require('bootstrap-sass');
-    require('bootstrap');
-    require('slick-carousel');
-    require('eonasdan-bootstrap-datetimepicker');
 } catch (e) {
     console.log(e);
 }
