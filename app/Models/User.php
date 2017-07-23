@@ -26,4 +26,29 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public static function incVisitCount($id)
+    {
+        static::whereId($id)->increment('visitCount');
+    }
+
+    public function visiting()
+    {
+        return $this->belongsToMany('App\Models\User', 'visitor', 'visitorId', 'userId');
+    }
+
+    public function visited()
+    {
+        return $this->belongsToMany('App\Models\User', 'visitor', 'userId', 'visitorId');
+    }
+
+    public function following()
+    {
+        return $this->belongsToMany('App\Models\User', 'favourite', 'followerId', 'followingId');
+    }
+
+    public function followed()
+    {
+        return $this->belongsToMany('App\Models\User', 'favourite', 'followingId', 'followerId');
+    }
 }

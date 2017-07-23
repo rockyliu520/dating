@@ -2,10 +2,12 @@
 @section('index')
 <div class="container be-detail-container" id="r_vue_profile">
 	<div class="row">
-
+		
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 15px;">
-			<div class="alert alert-danger">
-				<h4>Hi, {{ Auth::user()->fname }} 您还没有验证邮箱, 请去邮箱进行验证</h4>
+			<div class='alert alert-warning alert-white rounded'>
+				<button type='button' data-dismiss='alert' aria-hidden='true' class='close'>×</button>
+				<div class='icon'><i class='fa fa-warning'></i></div>
+				<strong>提示: </strong>您还没有验证邮箱，请登录邮箱进行验证。点击<a href="#" v-on:click="resend()" id="r_resend_email_link">重新发送</a>验证邮件。
 			</div>
 		</div>
 
@@ -23,12 +25,9 @@
 						<li class="edit-ln"><a href="#edit-password">更换密码</a></li>
 						<li class="edit-ln"><a href="#on-the-web">社交网络</a></li>
 						<li class="edit-ln"><a href="#about-me">关于我</a></li>
-						<!-- <li class="edit-ln"><a href="#web-references">Web References</a></li> -->
 					</ul>
 				</div>
-				<!-- <a class="btn full color-1 size-1 hover-1 add_section"><i class="fa fa-plus"></i>add sections</a>	 -->
 			</div>
-
 		</div>
 		<div class="col-xs-12 col-md-9 _editor-content_">
 			<div class="sec"  data-sec="basic-information">
@@ -40,7 +39,11 @@
 						<div class="be-large-post-align">
 							<div class="be-change-ava">
 								<a class="be-ava-user style-2" href="blog-detail-2.html">
+									@if(Auth::user()->image == '')
 									<img src="/img/ava_10.jpg" alt=""> 
+									@else
+									<img src="{{ Auth::user()->image }}" alt=""> 
+									@endif
 								</a>
 								<a class="btn color-4 size-2 hover-7">更换头像</a>
 							</div>

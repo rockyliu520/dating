@@ -1,0 +1,115 @@
+.alert-danger {
+    border:1px solid #e74c3c;
+    color: white;
+    border: none;
+    padding: 21px 21px 15px 30px;
+    border-radius:2px;
+}
+
+.alert-success {
+    border:1px solid #2ecc71;
+    color: white;
+    border: none;
+    padding: 21px 21px 15px 30px;
+    border-radius:2px;
+}
+
+.alert-info {
+    border:1px solid #3498db;
+    color: white;
+    border: none;
+    padding: 21px 21px 15px 30px;
+    border-radius:2px;
+}
+
+.alert-warning {
+    border:1px solid #fc9700;
+    color: white;
+    border: none;
+    padding: 21px 21px 15px 30px;
+    border-radius:2px;
+}
+
+.alert-white {
+    color: #404040;
+    padding-left: 81px;
+    position: relative;
+}
+
+.alert-white.rounded {
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+
+.alert-white.rounded .icon {
+    border-radius: 2px 0 0 2px;
+    -webkit-border-radius: 2px 0 0 2px;
+}
+
+.alert-white .icon {
+    text-align: center;
+    width: 65px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 15px;
+}
+
+.alert-white .icon:after {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    display: block;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border: 1px solid #bdbdbd;
+    position: absolute;
+    border-left: 0;
+    border-bottom: 0;
+    top: 50%;
+    right: -5px;
+    margin-top: -3px;
+    background: #fff;
+}
+
+.alert-white .icon i {
+    font-size: 20px;
+    color: #fff;
+    left: 24px;
+    margin-top: -10px;
+    position: absolute;
+    top: 50%;
+}
+
+// warning
+.alert-white.alert-warning .icon, 
+.alert-white.alert-warning .icon:after {
+    border-color: #fc9700;
+    background: #fc9700;
+}
+
+// danger
+.alert-white.alert-danger .icon, 
+.alert-white.alert-danger .icon:after {
+    border-color: #e74c3c;
+    background: #e74c3c;
+}
+
+// info
+.alert-white.alert-info .icon, 
+.alert-white.alert-info .icon:after {
+    border-color: #3498db;
+    background: #3498db;
+}
+
+// success
+.alert-white.alert-success .icon, 
+.alert-white.alert-success .icon:after {
+    border-color: #2ecc71;
+    background: #2ecc71;
+}
+

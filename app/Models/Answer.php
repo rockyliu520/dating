@@ -7,4 +7,9 @@ use DB;
 class Answer extends Model
 {
     protected $table = 'answer';
+
+    public function hasQuestion()
+    {
+    	return $this->belongsTo('App\Models\Question', 'questionId');
+    }
 }

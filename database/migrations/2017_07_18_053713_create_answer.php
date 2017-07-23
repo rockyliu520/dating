@@ -17,7 +17,8 @@ class CreateAnswer extends Migration
             $table->increments('id');
             $table->integer('userId');
             $table->string('answer');
-            $table->integer('likes');
+            $table->integer('likes')->default(0);
+            $table->integer('questionId');
             $table->timestamps();
         });
     }

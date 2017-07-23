@@ -2,26 +2,21 @@
 
 @section('index')
 <!-- MAIN CONTENT -->
-<div class="container custom-container be-detail-container">
+<div class="container custom-container be-detail-container" id="r_detail">
 	<div class="row">
 		<div class="col-md-9 col-md-push-3">
 			<div class="be-large-post">
 				<div class="info-block">
 					<div class="be-large-post-align">
-						<span><i class="fa fa-thumbs-o-up"></i> 253</span>
-						<span><i class="fa fa-eye"></i> 753</span>
+						<span><i class="fa fa-thumbs-o-up"></i> {{ $user->likes }}</span>
+						<span><i class="fa fa-eye"></i> {{ $user->visitCount }}</span>
 					</div>
 				</div>
 				<div class="blog-content popup-gallery be-large-post-align">
 					<h5 class="be-post-title to">
 						{{ $user->fname }}的介绍
 					</h5>
-
-					<!-- <span class="be-text-tags">
-						<a href="blog-detail-2.html" class="be-post-tag">Interactiob design</a>, 
-						<a href="blog-detail-2.html" class="be-post-tag">UI/UX</a>,  
-						<a href="blog-detail-2.html" class="be-post-tag">Web Design</a>
-					</span> -->
+					
 					<div class="clear"></div>
 					<div class="post-text">
 						<div class="be-large-post-slider type-wide">

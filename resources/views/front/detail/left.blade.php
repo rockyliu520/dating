@@ -27,7 +27,7 @@
 		</p>
 	</div>
 	
-	<a href="blog-detail-2.html" class="be-button-vidget like-btn blue-style">
+	<a href="javascript:void(0)" class="be-button-vidget like-btn blue-style" v-on:click="addToFav({{ $user->id }})">
 		<i class="fa fa-plus"></i>&nbsp;&nbsp;关注 TA
 	</a>
 

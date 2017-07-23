@@ -38,26 +38,13 @@
 					@if(Auth::check())
 					<li><a href="/account/profile">我的资料</a></li>
 					@endif
-					<!-- <li><a href="activity.html">Activity</a></li>
-					<li><a href="search.html">Discover</a>
-						<ul>
-							<li><a href="search.html">Explore</a></li>
-							<li><a href="people.html">People</a></li>
-							<li><a href="gallery.html">Galleries</a></li>
-						</ul>
-					</li>
-					<li><a href="author-login.html">My Portfolio</a></li>
-					<li><a href="site-map.html">Site Map</a></li>
-					<li><a href="organization.html">Organization</a></li>
-					<li id="ad-work-li"><a id="add-work-btn" class="btn color-1" href="work.html">Add Work </a></li> -->
-
 				</ul>
 			</div>
 
 			@if(!Auth::check())
 				<div class="login-header-block">
 					<div class="login_block">
-						<a class="btn-login btn color-1 size-2 hover-2">
+						<a class="btn color-1 size-2 hover-2" id="r_account_modal_button" data-toggle="modal" href='#r_account_modal'>
 							<i class="fa fa-user"></i>
 							账号登录
 						</a>

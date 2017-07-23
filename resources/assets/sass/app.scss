@@ -4,6 +4,33 @@
 // Variables
 @import "variables";
 
+@import "alert.scss";
+
+@import "loader.scss";
+
+@import "account/dashboard.scss";
+
+@import "modal.scss";
+
+.disappear {
+	display: none;
+}
+
+select:focus {
+    outline: none;
+}
+
+.noPadding {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.noPaddingLeft {
+	padding-left: 0px;
+}
+.noPaddingRight {
+	padding-right: 0px;
+}
 .center {
 	text-align: center;
 }
@@ -50,3 +77,4 @@
 	transition: all ease 0.5s;
 	box-shadow: none;
 }
+

@@ -11,6 +11,7 @@
 |
 */
 
+// account route
 Route::group(['prefix' => 'account'], function() {
 	
 	Route::get('verifyemail/{token}', ['uses' => 'AccountController@verify']);
@@ -25,8 +26,6 @@ Route::group(['prefix' => 'account'], function() {
 
 	Route::post('update-profile', ['uses' => 'AccountController@updateProfile']);
 	
-	Route::post('update-wechat', ['uses' => 'AccountController@updateWechat']);
-	
 	Route::post('update-description', ['uses' => 'AccountController@updateDescription']);
 
 	Route::get('signin', ['uses' => 'AccountController@signin']);
@@ -35,8 +34,12 @@ Route::group(['prefix' => 'account'], function() {
 
 	Route::get('signout', ['uses' => 'AccountController@signout']);
 	
-	// Route::get('edit/{insId}', ['uses' => 'InsController@edit']);
-	// Route::get('/', ['uses' => 'InsController@index']);
+	Route::post('resend-verify-email', ['uses' => 'AccountController@resendVerifyEmail']);
+});
+
+// api route
+Route::group(['prefix' => 'api'], function() {
+	Route::post('add-favourite', ['uses' => 'ApiController@addOrRmFav']);
 });
 
 Route::get('contact-us', 'IndexController@contactus');

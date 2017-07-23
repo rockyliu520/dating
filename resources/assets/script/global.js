@@ -58,7 +58,7 @@ $(function() {
 	/* 04 - function on page load */
 	/*============================*/
 	$(window).load(function(){
-		$(".be-loader").fadeOut("slow");
+		$(".be-loader").fadeOut();
 		initSwiper();
 		notification();
 		//$('.isotope-grid').isotope({
@@ -68,7 +68,6 @@ $(function() {
 		setTimeout(function() {
 			$('.tab-wrapper.style-2 .tab-info').addClass('none');
 		}, 100)
-
 	});
 
 	/*==============================*/
@@ -603,7 +602,7 @@ $('.s-color').on('click', function() {
 
 
 	if($('#slider-range-max').length) {
-		$('.color-i').length && $('.color-i').colorPicker();
+		// $('.color-i').length && $('.color-i').colorPicker();
 		
 		$( "#slider-range-max").slider({
 			range: "max",
@@ -655,10 +654,10 @@ $('.s-color').on('click', function() {
 		$(this).text('FOLLOWING').css({'padding' : 5, 'textAlign' : "center"});
 	});
 
-	$('.like-btn').on('click', function (e) {
-		e.preventDefault();
-		$(this).html('YOU LIKED PROJECT');
-	});
+	// $('.like-btn').on('click', function (e) {
+	// 	e.preventDefault();
+	// 	$(this).html('YOU LIKED PROJECT');
+	// });
 
 	$('.add-btn').on('click', function (e) {
 		e.preventDefault();

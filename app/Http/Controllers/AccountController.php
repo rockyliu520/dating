@@ -7,10 +7,13 @@ use App\Jobs\SendVerificationEmail;
 use Hash;
 use App\Models\User;
 use App\Models\Visitor;
+use App\Models\Question;
+use App\Models\Answer;
 use Auth;
 use DB;
 use JavaScript;
 use Carbon\Carbon;
+use App\Models\Favourite;
 
 class AccountController extends Controller
 {
@@ -19,9 +22,8 @@ class AccountController extends Controller
 		$this->middleware('auth', ['except' => ['signin', 'signup', 'register', 'login', 'signout']]);
 	}
 
-	public function signin() 
+	public function signin()
 	{
-
 		return view('front.account.signin');
 	}
 
@@ -29,12 +31,25 @@ class AccountController extends Controller
 	{
 		$data = $request->all();
 
+
 		if (Auth::attempt(['email' => $data['email'], 'password' => $data['password']])) {
-			// return redirect()->to('/account/profile');
-			return redirect()->back();
+			
+			$response = array(
+				'code' => 1,
+				'message' => '登陆成功，跳转...'
+			);
+			
+			// return redirect()->back();
+			return response()->json($response);
 		}
 
-		return redirect()->back()->with('loginError', '账号邮箱不匹配');
+		$response = array(
+			'code' => 0,
+			'message' => '登陆失败，账号密码不匹配...'
+		);
+
+		return response()->json($response);
+		// return redirect()->back()->with('loginError', '账号邮箱不匹配');
 	}
 
 	public function signup(Request $request)
@@ -54,32 +69,53 @@ class AccountController extends Controller
 		$data = $request->all();
 
 		if ($data['email'] == '' || $data['email'] == null || $data['password'] == '' || $data['password'] == null) {
-			return redirect()->back()->with('registerError', '请输入必要信息');
+			$response = array(
+				'code' => 0,
+				'message' => '请输入必要的信息...'
+			);
+			return response()->json($response);
+			// return redirect()->back()->with('registerError', '请输入必要信息');
 		}
 
 		$checkDup = User::where('email', $data['email'])->get();
 		if ($checkDup->count() != 0) {
-			return redirect()->back()->with('registerError', '该邮箱已经被注册,请更换邮箱');
+			$response = array(
+				'code' => 0,
+				'message' => '您输入的邮箱已经被注册，请换个邮箱重试...'
+			);
+			return response()->json($response);
+			// return redirect()->back()->with('registerError', '该邮箱已经被注册,请更换邮箱');
 		}
 
 		$user = User::create([
 			'email' => $data['email'],
 			'fname' => $data['fname'],
-			'lname' => $data['lname'],
+			'lname' => '',
 			'password' => Hash::make($data['password']),
 			'email_token' => base64_encode($data['email']),
 			'sex' => $data['sex'],
 			'date' => $data['day'],
 			'month' => $data['month'],
 			'year' => $data['year'],
+			'height' => '-1',
+			'weight' => '-1',
+			'education' => '-1',
+			'bodyType' => '-1',
+			'status' => '-1',
+			'job' => '-1',
 		]);
 
 		Auth::attempt(['email' => $data['email'], 'password' => $data['password']]);
 
 		dispatch(new SendVerificationEmail($user));
 		// return view('front.account.verification');
-		return redirect()->to('/account/profile');
-		// return view('front.account.dashboard');
+
+		$response = array(
+			'code' => 1,
+			'message' => '注册成功，正在跳转...'
+		);
+		return response()->json($response);
+		// return redirect()->to('/account/profile');
 	}
 
 	/**
@@ -94,7 +130,8 @@ class AccountController extends Controller
 		$user->verified = 1;
 
 		if($user->save()) {
-			return view('front.account.emailconfirm', ['user' => $user]);
+			// return view('front.account.emailconfirm', ['user' => $user]);
+			return redirect()->to('/account/dashboard')->with('successVerify', 1);
 		}
 	}
 
@@ -106,25 +143,49 @@ class AccountController extends Controller
 
 	public function profile()
 	{
-		
 		return view('front.account.profile.profile');
 	}
 
 	public function dashboard()
 	{	
+		$visitor = Auth::user()->visited()
+			->select(DB::raw('da_users.id as id'), DB::raw('date(da_visitor.created_at) as c'), 'fname', 'image', 'location', 'sex', 'month', 'year', 'date', 'description', 'likes', 'visitCount')
+			->orderBy(DB::raw('da_visitor.created_at'), 'DESC')
+			->take(30)->get();
+
+		// 我关注的
+		$following = Auth::user()->following()
+			->select(DB::raw('da_users.id as id'), DB::raw('date(da_favourite.created_at) as c'), 'fname', 'image', 'location', 'sex', 'month', 'year', 'date', 'description', 'likes', 'visitCount')
+			->orderBy(DB::raw('da_favourite.created_at'), 'DESC')
+			->take(30)->get();
+
+		// 被关注
+		$followed = Favourite::select('id')->where('followingId', Auth::user()->id)->get();
+
 		$data = new Carbon;
 		$last7days = $data->subDays(7)->toDateString();
 		$today = Carbon::today()->toDateString();
 
+		// 过去7天访问人数
 		$last7 = Visitor::select(DB::raw('count(id) as total'), DB::raw('date(created_at) as d'))
 			->where('userId', Auth::user()->id)
 			->where(DB::raw('date(created_at)'), '>=', $last7days)
 			->where(DB::raw('date(created_at)'), '<=', $today)
 			->groupBy(DB::raw('date(created_at)'))
 			->get();
-		
+
+		$questions = Question::join('answer', 'answer.questionId', '=', 'question.id')
+			->select('questionId', DB::raw('da_answer.id as aid'), 'likes', 'question', 'answer')
+			->where('userId', Auth::user()->id)->whereIn(DB::raw('da_question.id'), [1,2,3,4,5,6,7])->get();
+
+		// $questions = Answer::find(1)->hasQuestion()->get()->toArray();
+
 		$data = array(
-			'last7' => $last7
+			'questions' => $questions,
+			'last7' => $last7,
+			'following' => $following,
+			'followed' => $followed,
+			'visitors' => $visitor
 		);
 
 		return view('front.account.dashboard.dashboard', $data);
@@ -132,13 +193,37 @@ class AccountController extends Controller
 
 	public function detail()
 	{
-		
 		return view('front.account.detail');
 	}
 
 	public function updateProfile(Request $request)
-	{
-		return 'hello world';
+	{	
+		$data = $request->all();
+
+		User::where('id', Auth::user()->id)->update([
+			'fname' => $data['fname'],
+			'date' => $data['date'],
+			'month' => $data['month'],
+			'year' => $data['year'],
+			'sex' => $data['sex'],
+			'height' => $data['height'],
+			'location' => $data['location'],
+			'postcode' => $data['postcode'],
+			'status' => $data['status'],
+			'child' => $data['child'],
+			'bodyType' => $data['bodyType'],
+			'education' => $data['education'],
+			'university' => $data['university'],
+			'job' => $data['job'],
+			'birthPlace' => $data['birthPlace'],
+			'pr' => $data['pr'],
+		]);
+
+		$response = array(
+			'code' => 1,
+			'message' => '更新成功...'
+		);
+		return response()->json($response);
 	}
 
 	public function updateWechat(Request $request)
@@ -149,5 +234,18 @@ class AccountController extends Controller
 	public function updateDescription(Request $request)
 	{
 		
+	}
+
+	public function resendVerifyEmail()
+	{
+		$user = User::find(Auth::user()->id);
+		dispatch(new SendVerificationEmail($user));
+
+		$response = array(
+			'code' => 1,
+			'message' => '验证邮件发送成功'
+		);
+
+		return response()->json($response);
 	}
 }
