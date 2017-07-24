@@ -839,6 +839,9 @@ $(function () {
 		},
 		methods: {
 			signin: function signin() {
+
+				$('.r_loader').removeClass('disappear');
+
 				var self = this;
 				self.running = 1;
 				self.loginError = 0;
@@ -848,6 +851,7 @@ $(function () {
 					this.loginError = 1;
 					this.loginErrorMessage = '请输入邮箱及密码';
 					self.running = 0;
+					$('.r_loader').addClass('disappear');
 					return;
 				}
 
@@ -861,6 +865,7 @@ $(function () {
 						self.loginError = 1;
 						self.loginErrorMessage = data.message;
 						self.running = 0;
+						$('.r_loader').addClass('disappear');
 					}
 
 					if (data.code == 1) {
@@ -868,10 +873,12 @@ $(function () {
 						self.loginSuccessMessage = data.message;
 						self.running = 0;
 						window.location.href = "/account/dashboard";
+						$('.r_loader').addClass('disappear');
 					}
 				});
 			},
 			signup: function signup() {
+				$('.r_loader').removeClass('disappear');
 				var self = this;
 				self.running = 1;
 				self.registerError = 0;
@@ -881,12 +888,14 @@ $(function () {
 					self.registerError = 1;
 					self.registerErrorMessage = '请输入必要的信息';
 					self.running = 0;
+					$('.r_loader').addClass('disappear');
 					return;
 				}
 				if (self.registerEmail != self.registerReEmail) {
 					self.registerError = 1;
 					self.registerErrorMessage = '两次输入的Email不相同';
 					self.running = 0;
+					$('.r_loader').addClass('disappear');
 					return;
 				}
 
@@ -904,12 +913,14 @@ $(function () {
 						self.registerSuccess = 1;
 						self.registerSuccessMessage = data.message;
 						window.location.href = "/account/dashboard";
+						$('.r_loader').addClass('disappear');
 						self.running = 0;
 					}
 
 					if (data.code == 0) {
 						self.registerError = 1;
 						self.registerErrorMessage = data.message;
+						$('.r_loader').addClass('disappear');
 						self.running = 0;
 					}
 				});
@@ -28967,7 +28978,7 @@ var Component = __webpack_require__(35)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\wamp64\\www\\resources\\assets\\js\\components\\Example.vue"
+Component.options.__file = "C:\\wamp64\\www\\dating\\resources\\assets\\js\\components\\Example.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -28978,9 +28989,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-76d0ccfb", Component.options)
+    hotAPI.createRecord("data-v-4a7e430a", Component.options)
   } else {
-    hotAPI.reload("data-v-76d0ccfb", Component.options)
+    hotAPI.reload("data-v-4a7e430a", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -29141,7 +29152,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-76d0ccfb", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-4a7e430a", module.exports)
   }
 }
 

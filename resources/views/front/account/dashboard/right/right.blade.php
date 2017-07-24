@@ -34,7 +34,7 @@
 										<textarea class="form-control">{{ $q->answer }}</textarea>
 										<div class="r_profile_qna_button">
 											<button class="btn color-3 size-1 hover-6 r_profile_qna_cancel">取消</button>
-											<button class="btn color-1 size-1 hover-1 r_profile_qna_save">更新</button>
+											<button class="btn color-1 size-1 hover-1 r_profile_qna_save" v-on:click="answer({{ $q->questionId }})">更新</button>
 											<div class="clearfix"></div>
 										</div>
 									</div>

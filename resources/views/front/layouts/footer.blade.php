@@ -191,6 +191,26 @@
 								toastr.success(data.message);
 							}
 						})
+					},
+					answer:function(qid){
+						$('.r_loader').removeClass('disappear');
+						var el = event.target;
+						var answer = $(event.target).parent().prev().val();
+						
+						$(el).parent().prev().val(answer);
+						$(el).parent().parent().prev().val(answer);
+
+						$.post('/account/answer-question', {
+							_token:_token,
+							qid:qid,
+							answer:answer
+						}, function(data) {
+							$('.r_loader').addClass('disappear');
+							if (data.code == 1) {
+								toastr.success(data.message);
+							}
+						})
+
 					}
 				}, 	
 				created: function() {

@@ -31,7 +31,6 @@ class AccountController extends Controller
 	{
 		$data = $request->all();
 
-
 		if (Auth::attempt(['email' => $data['email'], 'password' => $data['password']])) {
 			
 			$response = array(
@@ -244,6 +243,33 @@ class AccountController extends Controller
 		$response = array(
 			'code' => 1,
 			'message' => '验证邮件发送成功'
+		);
+
+		return response()->json($response);
+	}
+
+	public function answerQuestion(Request $request)
+	{
+		$data = $request->all();
+
+		$check = Answer::where('questionId', $data['qid'])->where('userId', Auth::user()->id)->get();
+		
+		if ($check->count() != 0) {
+			// update
+			Answer::where('questionId', $data['qid'])->where('userId', Auth::user()->id)->update(['answer' => $data['answer']]);
+		} else {
+			// create
+			$a = new Answer;
+			$a->userId = Auth::user()->id;
+			$a->questionId = $data['qid'];
+			$a->likes = 0;
+			$a->answer = $data['answer'];
+			$a->save();
+		}
+
+		$response = array(
+			'code' => 1,
+			'message' => '更新成功'
 		);
 
 		return response()->json($response);

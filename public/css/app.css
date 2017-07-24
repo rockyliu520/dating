@@ -456,6 +456,7 @@
   color: #e74c3c;
   border-color: #e74c3c;
   margin: 0px;
+  font-size: 16px;
 }
 
 .r_profile_qna_button .r_profile_qna_cancel:hover {
@@ -464,12 +465,22 @@
   border-color: #e74c3c;
 }
 
+.r_profile_qna_button .r_profile_qna_cancel:focus {
+  outline: none;
+}
+
 .r_profile_qna_button .r_profile_qna_save {
   float: right;
   border-radius: 2px;
   padding: 15px 56px;
   position: relative;
   margin: 0px;
+  font-size: 16px;
+}
+
+.r_profile_qna_button .r_profile_qna_save:focus {
+  outline: none;
+  color: white;
 }
 
 .r_profile_edit_qna {

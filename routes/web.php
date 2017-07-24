@@ -35,6 +35,8 @@ Route::group(['prefix' => 'account'], function() {
 	Route::get('signout', ['uses' => 'AccountController@signout']);
 	
 	Route::post('resend-verify-email', ['uses' => 'AccountController@resendVerifyEmail']);
+
+	Route::post('answer-question', ['uses' => 'AccountController@answerQuestion']);
 });
 
 // api route

@@ -57,6 +57,9 @@ $(function () {
 		}, 
 		methods: {
 			signin: function() {
+				
+				$('.r_loader').removeClass('disappear');
+				
 				var self = this;
 				self.running = 1;
 				self.loginError = 0;
@@ -66,6 +69,7 @@ $(function () {
 					this.loginError = 1;
 					this.loginErrorMessage = '请输入邮箱及密码';
 					self.running = 0;
+					$('.r_loader').addClass('disappear');
 					return;
 				}
 				
@@ -79,6 +83,7 @@ $(function () {
 						self.loginError = 1;
 						self.loginErrorMessage = data.message;
 						self.running = 0;
+						$('.r_loader').addClass('disappear');
 					}
 
 					if (data.code == 1) {
@@ -86,10 +91,12 @@ $(function () {
 						self.loginSuccessMessage = data.message;
 						self.running = 0;
 						window.location.href = "/account/dashboard"; 
+						$('.r_loader').addClass('disappear');
 					} 
 				})
 			}, 
 			signup: function() {
+				$('.r_loader').removeClass('disappear');
 				var self = this;
 				self.running = 1;
 				self.registerError = 0;
@@ -106,12 +113,14 @@ $(function () {
 					self.registerError = 1;
 					self.registerErrorMessage = '请输入必要的信息';
 					self.running = 0;
+					$('.r_loader').addClass('disappear');
 					return;
 				}
 				if (self.registerEmail != self.registerReEmail) {
 					self.registerError = 1;
 					self.registerErrorMessage = '两次输入的Email不相同';
 					self.running = 0;
+					$('.r_loader').addClass('disappear');
 					return;
 				}
 
@@ -129,12 +138,14 @@ $(function () {
 						self.registerSuccess = 1;
 						self.registerSuccessMessage = data.message;
 						window.location.href = "/account/dashboard";
+						$('.r_loader').addClass('disappear');
 						self.running = 0;
 					}
 
 					if (data.code == 0) {
 						self.registerError = 1;
 						self.registerErrorMessage = data.message;
+						$('.r_loader').addClass('disappear');
 						self.running = 0;
 					}
 				})

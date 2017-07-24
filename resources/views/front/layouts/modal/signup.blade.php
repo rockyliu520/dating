@@ -212,9 +212,6 @@
 	</div>
 
 	<div class="col-md-12 for-signin noPadding">
-		<button class="be-popup-sign-button btn-block" type="button" v-on:click="signup()" v-if="running == 0">现在注册</button>
-		<button class="be-popup-sign-button btn-block" disabled="disabled" v-if="running == 1">
-			<img src="/img/loader/rolling.gif" />
-		</button>
+		<button class="be-popup-sign-button btn-block" type="button" v-on:click="signup()">现在注册</button>
 	</div>
 </form>
