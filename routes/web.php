@@ -37,13 +37,12 @@ Route::group(['prefix' => 'account'], function() {
 	Route::post('resend-verify-email', ['uses' => 'AccountController@resendVerifyEmail']);
 
 	Route::post('answer-question', ['uses' => 'AccountController@answerQuestion']);
-
-	Route::post('remove-question');
 });
 
 // api route
 Route::group(['prefix' => 'api'], function() {
 	Route::post('add-favourite', ['uses' => 'ApiController@addOrRmFav']);
+	Route::post('likes', ['uses' => 'ApiController@like']);
 });
 
 Route::get('contact-us', 'IndexController@contactus');

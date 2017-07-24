@@ -38,6 +38,11 @@
 	var updateJob = '{{ Auth::user()->job }}';
 	var updateBirthPlace = '{{ Auth::user()->birthPlace }}';
 	var updatePr = '{{ Auth::user()->pr }}';
+	<?php 
+		$jsArray = json_encode($hobby);
+		// var_dump(gettype($hobby));
+		echo "var updateHobby = ".$jsArray.";\n"
+	?>
 
 	var data = {
 		    labels : ["SUN","MON","TUE","WED","THU","FRI","SAT"],

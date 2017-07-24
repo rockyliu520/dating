@@ -4,7 +4,11 @@
 			<a class="be-ava-user" href="blog-detail-2.html">
 				<img src="{{ $user->image }}" alt=""> 
 			</a>
-			<p class="be-use-name">{{ $user->fname }}</p>
+			<?php 
+				$year = date('Y');
+				$age = $year - $user->year; 
+			?>
+			<p class="be-use-name">{{ $user->fname }}, {{ $age }}</p>
 			<span class="be-user-info">
 				{{ $user->location }}, 澳大利亚
 			</span>
@@ -28,16 +32,25 @@
 	</div>
 	
 	<a href="javascript:void(0)" class="be-button-vidget like-btn blue-style" v-on:click="addToFav({{ $user->id }})">
-		<i class="fa fa-plus"></i>&nbsp;&nbsp;关注 TA
+		@if($isFav == 0)
+			<i class="fa fa-plus"></i>&nbsp;&nbsp;关注 TA
+		@else
+			已经关注用户
+		@endif
 	</a>
 
-	<a href="blog-detail-2.html" class="be-button-vidget like-btn blue-style">
+	<a href="javascript:void(0)" class="be-button-vidget like-btn blue-style" v-on:click="like({{ $user->id }})">
+		@if($isFav == 0)
 		<i class="fa fa-thumbs-o-up"></i>&nbsp;&nbsp;给&nbsp;TA&nbsp;一个赞
+		@else
+		已经点赞
+		@endif
 	</a>
 	
-	<a href="blog-detail-2.html" class="be-button-vidget like-btn blue-style">
+	<!-- <a href="blog-detail-2.html" class="be-button-vidget like-btn blue-style">
 		<i class="fa fa-envelope-o"></i>&nbsp;&nbsp;给&nbsp;TA&nbsp;发送消息
-	</a>
+	</a> -->
+
 	<!-- <a href="blog-detail-2.html" class="be-button-vidget add-btn grey-style"><i class="fa fa-file-o"></i>ADD TO COLLECTION</a> -->
 	
 	<!-- <h3 class="letf-menu-article text-center">Recent Works</h3>					

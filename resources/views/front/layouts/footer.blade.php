@@ -143,9 +143,26 @@
 					updateUniversity:updateUniversity,
 					updateJob:updateJob,
 					updateBirthPlace:updateBirthPlace,
-					updatePr:updatePr
+					updatePr:updatePr,
+					updateHobby:updateHobby
 				},
 				methods: {
+					addHobby: function(hobby) {
+						var el = event.target;
+						var self = this;
+						if ($(el).hasClass('r_profile_hl_selected')) {
+							// this.updateHobby.push(hobby);
+
+							$(el).removeClass('r_profile_hl_selected');
+							var index = this.updateHobby.indexOf(hobby);    // <-- Not supported in <IE9
+							if (index !== -1) {
+							    this.updateHobby.splice(index, 1);
+							}
+						} else {
+							this.updateHobby.push(hobby);
+							$(el).addClass('r_profile_hl_selected');
+						}
+					},
 					resend: function() {
 						$('.r_loader').removeClass('disappear');
 						
@@ -181,7 +198,8 @@
 							university:self.updateUniversity,
 							job:self.updateJob,
 							birthPlace:self.updateBirthPlace,
-							pr:self.updatePr
+							pr:self.updatePr,
+							hobby:self.updateHobby
 						}, function(data) {
 							console.log(data);
 							$('.r_loader').addClass('disappear');
@@ -214,7 +232,8 @@
 					}
 				}, 	
 				created: function() {
-					console.log('I am rocky');
+					console.log(this.updateHobby );
+
 				}
 			})
 
@@ -291,6 +310,24 @@
 		}
 		
 		if (location.pathname.indexOf('/detail') != -1) {
+			$('.popup-gallery').length && $('.popup-gallery').magnificPopup({
+				delegate: 'a.popup-a',
+				type: 'image',
+				tLoading: 'Loading image #%curr%...',
+				mainClass: 'mfp-img-mobile',
+				gallery: {
+					enabled: true,
+					navigateByImgClick: true,
+					preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+				},
+				image: {
+					tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+					titleSrc: function(item) {
+						return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+					}
+				}
+			});
+
 			var vue = new Vue({
 				el:'#r_detail',
 				data: {
@@ -298,7 +335,6 @@
 				},
 				methods: {
 					addToFav:function(id) {
-
 						$('.r_loader').removeClass('disappear');
 						var el = event.target;
 
@@ -309,6 +345,21 @@
 							if (data.code == 1) {
 								$('.r_loader').addClass('disappear');
 								$(el).html(data.message);
+								toastr.success(data.message);
+							}
+						})
+					},
+					like: function(id) {
+						$('.r_loader').removeClass('disappear');
+						var el = event.target;
+
+						$.post('/api/likes', {
+							_token:_token,
+							likeId:id
+						}, function(data) {
+							if (data.code == 1) {
+								$('.r_loader').addClass('disappear');
+								$(el).html(data.html);
 								toastr.success(data.message);
 							}
 						})

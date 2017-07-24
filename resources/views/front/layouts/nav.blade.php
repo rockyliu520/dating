@@ -36,7 +36,7 @@
 					<li><a href="/about-us">关于我们</a></li>
 
 					@if(Auth::check())
-					<li><a href="/account/profile">我的资料</a></li>
+					<li><a href="/account/dashboard">我的资料</a></li>
 					@endif
 				</ul>
 			</div>

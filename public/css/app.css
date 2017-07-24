@@ -483,8 +483,41 @@
   color: white;
 }
 
+.r_profile_qna_button .r_profile_qna_save:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 .r_profile_edit_qna {
   margin: 20px 0px 15px 0px;
+}
+
+.be-user-detail .r_left_change_profile_btn:focus {
+  outline: none;
+  color: white;
+}
+
+.r_profile_hl {
+  padding: 0 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  height: 25px;
+  width: auto;
+  font-size: 12px;
+  display: inline-block;
+  text-align: center;
+  line-height: 23px;
+  cursor: pointer;
+  border-radius: 2px;
+  border: 1px solid #d7d7d7;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.r_profile_hl_selected {
+  border: 1px solid #0d58c8;
+  background-color: #0d58c8;
+  color: #fff;
 }
 
 .modal-backdrop.in {
@@ -621,6 +654,85 @@
 #r_dashboard .author-post p {
   color: #262626;
   margin-bottom: 10px;
+}
+
+#r_detail .well {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+}
+
+#r_detail h4 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#r_detail .well p {
+  font-size: 18px;
+  color: #8c8c8c;
+  margin-bottom: 10px;
+}
+
+#r_detail .well p:last-child {
+  margin-bottom: 0px !important;
+}
+
+#r_detail .well p i {
+  min-width: 30px;
+}
+
+#r_detail .r_detail_question h4 i {
+  color: #3498db;
+}
+
+#r_detail .r_detail_question h4 {
+  margin-bottom: 5px;
+  margin-top: 25px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+#r_detail .r_detail_question p {
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 400;
+  margin-top: 20px;
+  word-wrap: break-word;
+  font-size: 16px;
+  margin-bottom: 0px;
+  line-height: 1;
+}
+
+#r_detail .r_detail_question p i {
+  color: #b5b5b5;
+}
+
+.r_detail_photo {
+  display: table;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.r_detail_photo a {
+  display: table-cell;
+  width: 25%;
+  padding: 10px;
+  border-right: 6px solid white;
+}
+
+.tags_block li a {
+  border-radius: 2px;
+}
+
+.r_detail_photo a img {
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.r_detail_photo a img:hover {
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .disappear {

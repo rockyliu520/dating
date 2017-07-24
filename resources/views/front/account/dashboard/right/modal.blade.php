@@ -382,6 +382,18 @@
 									</div>
 								</div>
 								<div role="tabpanel" class="tab-pane" id="habit">
+									<label>
+										兴趣爱好
+									</label>
+									<div class="r_profile_hobby">
+										@foreach($listHobby as $l)
+											@if(isset($compareHobby[$l]))
+												<span class="r_profile_hl r_profile_hl_selected" v-on:click="addHobby('{{ $l }}')">{{ $l }}</span>
+											@else
+												<span class="r_profile_hl" v-on:click="addHobby('{{ $l }}')">{{ $l }}</span>
+											@endif
+										@endforeach
+									</div>
 								</div>
 							</div>
 						</div>

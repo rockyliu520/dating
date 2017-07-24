@@ -73,6 +73,9 @@
 		@else
 			{{ Auth::user()->university }}
 		@endif
+		@if(Auth::user()->job != -1)
+			{{ Auth::user()->job }}
+		@endif
 	</p>
 	<p>
 		<i class="fa fa-globe" aria-hidden="true"></i>
@@ -84,7 +87,7 @@
 	</p>
 	<p>
 		<i class="fa fa-leaf" aria-hidden="true"></i>
-		@if(Auth::user()->smoke != null || Auth::user()->smoke != '')
+		@if(Auth::user()->smoke != -1)
 			@if(Auth::user()->smoke == 1)
 				抽烟,
 			@else
@@ -93,7 +96,7 @@
 		@else
 			<i>抽烟?</i>
 		@endif
-		@if(Auth::user()->smoke != null || Auth::user()->smoke != '')
+		@if(Auth::user()->drinking != -1)
 			@if(Auth::user()->drinking == 1)
 				偶尔喝酒,
 			@endif

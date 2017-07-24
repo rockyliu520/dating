@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Visitor;
+use App\Models\Question;
+use App\Models\Answer;
+use App\Models\Hobby;
+use App\Models\Favourite;
+use App\Models\Like;
 use Auth;
 use DB;
 
@@ -46,11 +51,25 @@ class IndexController extends Controller
         User::incVisitCount($id);
         
         Visitor::newVisitor(Auth::user()->id, $id);
-
-        $user = User::find($id);
         
+        $favourite = Favourite::where('followingId', $id)->where('followerId', Auth::user()->id)->get();
+        $likes = Like::where('userId', Auth::user()->id)->where('likeId', $id)->get();
+
+        $questions = Question::all();
+
+        $answer = Answer::where('userId', $id)->get();
+        $answer = $answer->keyBy('questionId');
+        
+        $user = User::find($id);
+        $hobby = Hobby::where('userId', $id)->get();
+
         $data = array(
-            'user' => $user
+            'hobby' => $hobby,
+            'answer' => $answer,
+            'user' => $user,
+            'questions' => $questions,
+            'isFav' => $favourite->count(),
+            'isLike' => $likes->count(),
         );
         
         return view('front.detail.detail', $data);
