@@ -8,7 +8,7 @@
 			<div class="be-user-info">
 				{{ Auth::user()->location }}, {{ Auth::user()->postcode }}, 澳大利亚
 			</div>
-			<a class="be-ava-center btn color-1 size-1 btn-block hover-1" data-toggle="modal" href='#r_change_profile' style="margin-bottom: 5px;" target="_blank">
+			<a class="be-ava-center btn color-1 size-1 btn-block hover-1 r_left_change_profile_btn" data-toggle="modal" href='#r_change_profile' style="margin-bottom: 5px;" target="_blank">
 				<i class="fa fa-plus"></i>修改资料
 			</a>
 			<div class="be-ava-center btn btn-message color-4 size-1 hover-7 btn-block">

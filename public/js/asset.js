@@ -1,5 +1,3 @@
-"use strict";
-
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 /*! jQuery v2.1.4 | (c) 2005, 2015 jQuery Foundation, Inc. | jquery.org/license */
@@ -7,7 +5,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	"object" == (typeof module === "undefined" ? "undefined" : _typeof(module)) && "object" == _typeof(module.exports) ? module.exports = a.document ? b(a, !0) : function (a) {
 		if (!a.document) throw new Error("jQuery requires a window with a document");return b(a);
 	} : b(a);
-}("undefined" != typeof window ? window : undefined, function (a, b) {
+}("undefined" != typeof window ? window : this, function (a, b) {
 	var c = [],
 	    d = c.slice,
 	    e = c.concat,

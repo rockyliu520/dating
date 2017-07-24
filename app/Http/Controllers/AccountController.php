@@ -101,7 +101,7 @@ class AccountController extends Controller
 			'education' => '-1',
 			'bodyType' => '-1',
 			'status' => '-1',
-			'job' => '-1',
+			'job' => '其他',
 		]);
 
 		Auth::attempt(['email' => $data['email'], 'password' => $data['password']]);

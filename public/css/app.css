@@ -483,8 +483,18 @@
   color: white;
 }
 
+.r_profile_qna_button .r_profile_qna_save:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 .r_profile_edit_qna {
   margin: 20px 0px 15px 0px;
+}
+
+.be-user-detail .r_left_change_profile_btn:focus {
+  outline: none;
+  color: white;
 }
 
 .modal-backdrop.in {
@@ -621,6 +631,32 @@
 #r_dashboard .author-post p {
   color: #262626;
   margin-bottom: 10px;
+}
+
+#r_detail .well {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+}
+
+#r_detail h4 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#r_detail .well p {
+  font-size: 18px;
+  color: #8c8c8c;
+  margin-bottom: 10px;
+}
+
+#r_detail .well p:last-child {
+  margin-bottom: 0px !important;
+}
+
+#r_detail .well p i {
+  min-width: 30px;
 }
 
 .disappear {

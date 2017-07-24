@@ -14,12 +14,18 @@
 				</div>
 				<div class="blog-content popup-gallery be-large-post-align">
 					<h5 class="be-post-title to">
-						{{ $user->fname }}的介绍
+						<?php 
+							$year = date('Y');
+							$age = $year - $user->year; 
+						?>
+						{{ $user->fname }}, {{ $age }}
 					</h5>
 					
 					<div class="clear"></div>
 					<div class="post-text">
-						<div class="be-large-post-slider type-wide">
+						@include('front.detail.well')
+						
+						<!-- <div class="be-large-post-slider type-wide">
 							<div class="swiper-container thumbnails-preview" data-autoplay="0" data-loop="1" data-speed="500" data-center="0" data-slides-per-view="1">
 				                <div class="swiper-wrapper">
 			                    	<div class="swiper-slide active" data-val="0">
@@ -71,14 +77,10 @@
 								</div>
 								<div class="pagination hidden"></div>
 							</div>
-						</div>
+						</div> -->
 						
 					</div>
 					<div class="post-text">
-						<p>
-							{{ $user->description }}
-						</p>
-
 						<div class="image-block">
 						    <a class="popup-a" href="/img/sample/1.jpg">
 								<img src="/img/sample/1.jpg" alt="">

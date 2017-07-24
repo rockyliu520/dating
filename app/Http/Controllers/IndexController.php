@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Visitor;
+use App\Models\Question;
+use App\Models\Answer;
 use Auth;
 use DB;
 
@@ -47,10 +49,14 @@ class IndexController extends Controller
         
         Visitor::newVisitor(Auth::user()->id, $id);
 
+        // $questions = Question::join('answer','answer.questionId', '=', 'question.id')->where('userId', $id)->get()->toArray();
+        $questions = Question::all();
+
         $user = User::find($id);
         
         $data = array(
-            'user' => $user
+            'user' => $user,
+            'questions' => $questions
         );
         
         return view('front.detail.detail', $data);

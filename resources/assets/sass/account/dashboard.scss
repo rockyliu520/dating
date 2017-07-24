@@ -2,7 +2,6 @@
 	box-shadow: none;
 	border:none;
 }
-
 #r_basic_info h4 {
     font-size: 22px;
     font-weight: bold;
@@ -101,4 +100,8 @@
 }
 .r_profile_edit_qna {
 	margin: 20px 0px 15px 0px;
+}
+.be-user-detail .r_left_change_profile_btn:focus{
+	outline: none;
+	color: white;
 }

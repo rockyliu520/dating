@@ -1,0 +1,24 @@
+#r_detail .well {
+	box-shadow: none;
+	border:none;
+}
+#r_detail h4 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+#r_detail h4:hover {
+}
+#r_detail .well:hover {
+}
+#r_detail .well p {
+	font-size: 18px;
+	color: #8c8c8c;
+	margin-bottom: 10px;
+}
+#r_detail .well p:last-child {
+	margin-bottom: 0px !important;
+}
+#r_detail .well p i {
+	min-width: 30px;
+}
