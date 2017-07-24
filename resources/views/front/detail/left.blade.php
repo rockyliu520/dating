@@ -41,9 +41,9 @@
 
 	<a href="javascript:void(0)" class="be-button-vidget like-btn blue-style" v-on:click="like({{ $user->id }})">
 		@if($isFav == 0)
-		<i class="fa fa-thumbs-o-up"></i>&nbsp;&nbsp;给&nbsp;TA&nbsp;一个赞
+			<i class="fa fa-thumbs-o-up"></i>&nbsp;&nbsp;给&nbsp;TA&nbsp;一个赞
 		@else
-		已经点赞
+			已经点赞
 		@endif
 	</a>
 	
