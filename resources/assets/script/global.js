@@ -625,7 +625,6 @@ $('.s-color').on('click', function() {
 			}
 		});
 		$( "#amount-h" ).val( $( "#slider-head" ).slider( "value" ) );
-
 	}
 
 

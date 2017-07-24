@@ -42,6 +42,7 @@ Route::group(['prefix' => 'account'], function() {
 // api route
 Route::group(['prefix' => 'api'], function() {
 	Route::post('add-favourite', ['uses' => 'ApiController@addOrRmFav']);
+	Route::post('likes', ['uses' => 'ApiController@like']);
 });
 
 Route::get('contact-us', 'IndexController@contactus');

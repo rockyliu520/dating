@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Visitor;
 use App\Models\Question;
 use App\Models\Answer;
+use App\Models\Hobby;
 use Auth;
 use DB;
 use JavaScript;
@@ -147,6 +148,13 @@ class AccountController extends Controller
 
 	public function dashboard()
 	{	
+		$hobby = Hobby::select('hobby')->where('userId', Auth::user()->id)->get();
+		$h = array();
+		foreach ($hobby as $key => $value) {
+			array_push($h, $value->hobby);
+		}
+		$hobby = $hobby->keyBy('hobby')->toArray();
+
 		$visitor = Auth::user()->visited()
 			->select(DB::raw('da_users.id as id'), DB::raw('date(da_visitor.created_at) as c'), 'fname', 'image', 'location', 'sex', 'month', 'year', 'date', 'description', 'likes', 'visitCount')
 			->orderBy(DB::raw('da_visitor.created_at'), 'DESC')
@@ -177,14 +185,17 @@ class AccountController extends Controller
 			->select('questionId', DB::raw('da_answer.id as aid'), 'likes', 'question', 'answer')
 			->where('userId', Auth::user()->id)->whereIn(DB::raw('da_question.id'), [1,2,3,4,5,6,7])->get();
 
-		// $questions = Answer::find(1)->hasQuestion()->get()->toArray();
+		$listHobby = ['健美操','篮球','保龄球','露营','纸牌游戏','自行车','跳舞','钓鱼 / 狩猎','高尔夫球','远足','武术','乐器','攀岩','跑步','唱歌','滑雪 / 滑雪板','足球','游泳 / 水上运动','网球','旅游','排球','重量 / 健身房','瑜伽 / 普拉提','其他'];
 
 		$data = array(
 			'questions' => $questions,
 			'last7' => $last7,
 			'following' => $following,
 			'followed' => $followed,
-			'visitors' => $visitor
+			'visitors' => $visitor,
+			'hobby' => $h,
+			'compareHobby' => $hobby,
+			'listHobby' => $listHobby
 		);
 
 		return view('front.account.dashboard.dashboard', $data);
@@ -217,6 +228,15 @@ class AccountController extends Controller
 			'birthPlace' => $data['birthPlace'],
 			'pr' => $data['pr'],
 		]);
+
+		Hobby::where('userId', Auth::user()->id)->delete();
+
+		foreach ($data['hobby'] as $key => $value) {
+			$h = new Hobby;
+			$h->userId = Auth::user()->id;
+			$h->hobby = $value;
+			$h->save();
+		}
 
 		$response = array(
 			'code' => 1,

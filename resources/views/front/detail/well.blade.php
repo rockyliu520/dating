@@ -6,18 +6,15 @@
 		@else
 			女,
 		@endif
-		@if($user->height == '-1')
-		@else
+		@if($user->height != '-1')
 			{{ $user->height }}
 		@endif
 
-		@if($user->weight == '-1')
-		@else
+		@if($user->weight != '-1')
 			{{ $user->weight }}
 		@endif
 		
-		@if($user->bodyType == -1)
-		@else
+		@if($user->bodyType != -1)
 			@if($user->bodyType == 1)
 				偏瘦,
 			@elseif($user->bodyType == 2)
@@ -52,6 +49,8 @@
 	</p>
 	<p>
 		<i class="fa fa-suitcase" aria-hidden="true"></i>
+		<?php $count = 0; ?>
+
 		@if($user->education != -1)
 			@if($user->education == 0)
 				高中,
@@ -62,12 +61,24 @@
 			@elseif($user->education == 3)
 				博士,
 			@endif
+		@else
+			<?php $count++; ?>
 		@endif
+
 		@if($user->university  != '' || $user->university != null)
 			{{ $user->university }}
+		@else
+			<?php $count++; ?>
 		@endif
+
 		@if($user->job != -1)
-			(工作){{ $user->job }},
+			(工作)&nbsp;{{ $user->job }}
+		@else
+			<?php $count++; ?>
+		@endif
+
+		@if($count == 3)
+			<i>估计TA还没有想好怎么说</i>
 		@endif
 	</p>
 	<p>
@@ -75,16 +86,20 @@
 		@if($user->birthPlace != null || $user->birthPlace != '')
 			{{ $user->birthPlace }},
 		@else
+			<i>估计TA还没有想好怎么说</i>
 		@endif
 	</p>
 	<p>
 		<i class="fa fa-leaf" aria-hidden="true"></i>
+		<?php $count = 0; ?>
 		@if($user->smoke != -1)
 			@if($user->smoke == 1)
 				抽烟,
 			@else
 				不抽烟,
 			@endif
+		@else
+			<?php $count++; ?>
 		@endif
 
 		@if($user->drinking != -1)
@@ -97,6 +112,12 @@
 			@if($user->dreaking == 0)
 				不喝酒,
 			@endif
+		@else
+			<?php $count++; ?>
+		@endif
+
+		@if($count == 2)
+			<i>估计TA还没有想好怎么说</i>
 		@endif
 	</p>
 	<p>
@@ -104,6 +125,7 @@
 		@if($user->language != null || $user->language != '')
 			{{ $user->language }},
 		@else
+			<i>估计TA还没有想好怎么说</i>
 		@endif
 	</p>
 	<!-- <p>

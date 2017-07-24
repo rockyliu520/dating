@@ -24,7 +24,7 @@ class Favourite extends Model
     		// remove favourite
     		$check->delete();
 
-    		return '已经取消关注';
+    		return '<i class="fa fa-plus"></i>&nbsp;&nbsp;关注 TA';
     	}
     }
 }
