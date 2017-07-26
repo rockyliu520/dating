@@ -37,6 +37,10 @@ Route::group(['prefix' => 'account'], function() {
 	Route::post('resend-verify-email', ['uses' => 'AccountController@resendVerifyEmail']);
 
 	Route::post('answer-question', ['uses' => 'AccountController@answerQuestion']);
+
+	Route::post('upload-image', ['uses' => 'AccountController@uploadImage']);
+	
+	Route::post('delete-image', ['uses' => 'AccountController@deleteImage']);
 });
 
 // api route

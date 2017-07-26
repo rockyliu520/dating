@@ -122,6 +122,7 @@
 	<script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
 	<script type="text/javascript">
 		var _token = $('meta[name="csrf-token"]').attr('content');
+		Dropzone.autoDiscover = false;
 
 		if (location.pathname.indexOf('/account/dashboard') != -1) {
 
@@ -228,12 +229,54 @@
 								toastr.success(data.message);
 							}
 						})
+					},
+					changeImage: function() {
 
+						var myDropzone = new Dropzone("div#myDropzone", { 
+							uploadMultiple: false,
+						    parallelUploads: 100,
+						    maxFilesize: 5,
+						    acceptedFiles: 'image/*',
+							url: "/account/upload-image",
+							dictDefaultMessage: '<p>将图片拖拽至此</p><div id="r_dropzone_icons"><i class="fa fa-picture-o fa-3x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-laptop fa-3x" aria-hidden="true"></i></div><p>或者</p><p>从电脑上拖入您要上传的照片</p>',
+						    addRemoveLinks: true,
+						    dictRemoveFile: '取消',
+						    dictFileTooBig: '图片太大, 不能大于5MB',
+						    headers: {
+  								'x-csrf-token': document.querySelectorAll('meta[name=csrf-token]')[0].getAttributeNode('content').value,
+							},
+							method: 'post',
+							// Prevents Dropzone from uploading dropped files immediately
+							autoProcessQueue: false,
+							thumbnailWidth: 269,
+						    thumbnailHeight: 202,
+							init: function() {
+							    var submitButton = document.querySelector("#r_profile_image_upload_button")
+							        myDropzone = this; // closure
+
+							    submitButton.addEventListener("click", function() {
+						      		myDropzone.processQueue(); // Tell Dropzone to process all queued files.
+							    });
+
+							    this.on("thumbnail", function(file, dataUrl) {
+						            $('.dz-image').last().find('img').attr({width: '100%', height: '100%'});
+						        }),
+							    // You might want to show the submit button only when 
+							    // files are dropped here:
+							    this.on("addedfile", function() {
+						      		// Show submit button here and/or inform user to click it.
+							    });
+
+						  	}
+						});
+
+						myDropzone.on('success', function(file, resp, data) {
+
+						})
 					}
 				}, 	
 				created: function() {
 					console.log(this.updateHobby );
-
 				}
 			})
 

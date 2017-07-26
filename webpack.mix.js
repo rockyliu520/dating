@@ -28,6 +28,8 @@ mix.babel([
 		'resources/assets/script/jquery.easy-autocomplete.min.js',
 		'resources/assets/script/magnific.js',
 		'resources/assets/script/toastr.min.js',
+		'resources/assets/script/dropzone.min.js',
+		'resources/assets/script/cropper.min.js',
 		// 'resources/assets/script/map.js',
 		// 'resources/assets/script/script.js',
 		// 'resources/assets/script/sorttable.js',
@@ -47,6 +49,8 @@ mix.babel([
 		'resources/assets/style/magnific.css',
 		'resources/assets/style/animate.css',
 		'resources/assets/style/toastr.min.css',
+		'resources/assets/style/dropzone.min.css',
+		'resources/assets/style/cropper.min.css',
 		'resources/assets/style/stylesheet.css',
 	], 'public/css/asset.css')
 	.sass('resources/assets/sass/app.scss', 'public/css/app.css');

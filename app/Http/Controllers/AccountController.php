@@ -15,9 +15,14 @@ use DB;
 use JavaScript;
 use Carbon\Carbon;
 use App\Models\Favourite;
+use App\Logic\Image\ImageRepository;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Config;
 
 class AccountController extends Controller
 {
+	protected $image;
+
 	public function __construct()
 	{
 		$this->middleware('auth', ['except' => ['signin', 'signup', 'register', 'login', 'signout']]);
@@ -130,8 +135,7 @@ class AccountController extends Controller
 		$user->verified = 1;
 
 		if($user->save()) {
-			// return view('front.account.emailconfirm', ['user' => $user]);
-			return redirect()->to('/account/dashboard')->with('successVerify', 1);
+			return redirect()->to('/account/dashboard')->with('successVerify', '邮箱验证成功');
 		}
 	}
 
@@ -148,6 +152,13 @@ class AccountController extends Controller
 
 	public function dashboard()
 	{	
+		// dd(base_path());
+		// dd(Config::get('images.full_size'));
+		// dd(public_path('img/users'));
+		// $full_size_dir = Config::get('images.full_size');
+	 	// $store_path = $full_size_dir . '/'. sha1(Auth::user()->id).'/';
+		// dd(File::exists($store_path));
+
 		$hobby = Hobby::select('hobby')->where('userId', Auth::user()->id)->get();
 		$h = array();
 		foreach ($hobby as $key => $value) {
@@ -293,5 +304,20 @@ class AccountController extends Controller
 		);
 
 		return response()->json($response);
+	}
+
+	public function uploadImage(ImageRepository $imageRepository, Request $request)
+	{
+		$this->image = $imageRepository;
+
+		$data = $request->all();
+		
+		$response = $this->image->upload($data, Auth::user()->id, 1);
+        return $response;
+	}
+
+	public function deleteimage()
+	{
+
 	}
 }

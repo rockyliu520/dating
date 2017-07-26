@@ -15,6 +15,16 @@
 			</div>
 		@endif
 
+		@if(Session::has('successVerify'))
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 15px;">
+				<div class='alert alert-success alert-white rounded'>
+					<button type='button' data-dismiss='alert' aria-hidden='true' class='close'>×</button>
+					<div class='icon'><i class='fa fa-check'></i></div>
+					<strong>提示: </strong>邮箱验证成功！
+				</div>
+			</div>
+		@endif
+
 		@include('front.account.dashboard.left.left')
 
 		@include('front.account.dashboard.right.right')
