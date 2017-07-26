@@ -1,9 +1,42 @@
 <div class="col-xs-12 col-md-4 left-feild">
 	<div class="be-user-block style-3">
 		<div class="be-user-detail">
-			<a class="be-ava-user style-2" href="/detail/{{ Auth::user()->id }}" target="_blank">
+			<!-- <a class="be-ava-user style-2" href="/detail/{{ Auth::user()->id }}" target="_blank"> -->
+			<a class="be-ava-user style-2" data-toggle="modal" href='#r_profile_image_modal' v-on:click="changeImage()">
 				<img src="{{ Auth::user()->image }}" alt=""> 
 			</a>
+			
+			<p data-toggle="modal" href='#r_profile_image_modal' v-on:click="changeImage()">点击更换头像</p>
+			<div class="modal fade r_custom_modal" id="r_profile_image_modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title">更换头像</h4>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+									<div id="myDropzone" class="dropzone"></div> <!-- This is the dropzone element -->
+									<div id="dropzonePreview">
+										<h5>
+											<i class="fa fa-info-circle fa-4x" aria-hidden="true"></i>
+											<br>
+											提示：
+										</h5>
+										<p>推荐头像大小 269 x 202</p>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-top: 20px;">
+									<button class="be-popup-sign-button btn-block" id="r_profile_image_upload_button" type="button">上传照片</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<p class="be-use-name">{{ Auth::user()->fname }}</p>
 			<div class="be-user-info">
 				{{ Auth::user()->location }}, {{ Auth::user()->postcode }}, 澳大利亚
@@ -11,9 +44,12 @@
 			<a class="be-ava-center btn color-1 size-1 btn-block hover-1 r_left_change_profile_btn" data-toggle="modal" href='#r_change_profile' style="margin-bottom: 5px;" target="_blank">
 				<i class="fa fa-plus"></i>修改资料
 			</a>
-			<div class="be-ava-center btn btn-message color-4 size-1 hover-7 btn-block">
+			<a href="/detail/{{ Auth::user()->id }}" target="_blank" class="be-ava-center btn btn-message color-4 size-1 hover-7 btn-block">
+				<i class="fa fa-envelope-o"></i>查看我的首页
+			</a>
+			<!-- <div class="be-ava-center btn btn-message color-4 size-1 hover-7 btn-block">
 				<i class="fa fa-envelope-o"></i>我的信息
-			</div>
+			</div> -->
 
 			<div class="be-user-social">
 				<a class="social-btn color-1"><i class="fa fa-weixin"></i></a>

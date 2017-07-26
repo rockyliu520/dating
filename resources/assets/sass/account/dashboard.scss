@@ -133,3 +133,74 @@
  //    border: 1px solid rgba(0,0,0,.1);
  //    background-color: rgba(0,0,0,.1);
 }
+#r_profile_image_modal h4 {
+	text-align: left;
+}
+#myDropzone {
+	width:269px;
+	height: 202px;
+	border: 2px dashed rgba(0,0,0,0.3);
+	float: left;
+	position: relative;
+	padding: 0px;
+}
+#dropzonePreview {
+	float: right;
+	position: relative;
+	width: 50%;
+	text-align: center;
+}
+#r_dropzone_icons {
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+#r_dropzone_icons i {
+	color: #c7c7c7;
+}
+#myDropzone p {
+	color: #c7c7c7;
+	text-align: center;
+	font-size: 16px;
+}
+#myDropzone .dz-message {
+ 	// margin-top: 10px;
+ 	// margin-bottom: 10px;
+}
+#myDropzone .dz-preview .dz-image {
+    overflow: hidden;
+    width: 269px;
+    height: 202px;
+    position: relative;
+    display: block;
+    z-index: 10;
+    border-radius: 0px;
+}
+#myDropzone .dz-preview {
+	margin: -2px;
+}
+#myDropzone .dz-remove {
+    position: absolute;
+    top: 63%;
+    z-index: 9999;
+    left: 36%;
+    color: white;
+    background: #e74c3c;
+    padding: 6px 25px;
+    border-radius: 2px;
+}
+#myDropzone .dz-remove:hover {
+	text-decoration: none;
+}
+#dropzonePreview i {
+	color: #c7c7c7;
+	margin-bottom: 10px;
+}
+#dropzonePreview h5 {
+	margin-bottom: 10px;
+	font-size: 18px;
+	color: #c7c7c7;
+}
+#dropzonePreview p {
+	font-size: 16px;
+	color: #c7c7c7;
+}
