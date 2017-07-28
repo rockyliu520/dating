@@ -5,7 +5,7 @@
 		</h3>
 		<div class="creative_filds_block">
 			<div class="ul">
-				<a data-filter="*" class="filter">全部		</a>
+				<a data-filter="*" class="filter">全部</a>
 				<a data-filter=".male" class="filter">男</a>
 				<a data-filter=".female" class="filter">女</a>
 				<!-- <a data-filter=".category-3" class="filter">Interaction Design	</a>

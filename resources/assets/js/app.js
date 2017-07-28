@@ -24,7 +24,7 @@ Vue.component('example', require('./components/Example.vue'));
 $(function () {
 
 	var _token = $('meta[name="csrf-token"]').attr('content');
-
+	
 	$('#r_top_profile').css('top', $('header').height() - 18 + 'px');
 
 	$('.r_home_require_login').on('click', function() {
@@ -49,6 +49,7 @@ $(function () {
 			registerDay:-1,
 			registerYear:-1,
 			registerSex:-1,
+			registerLookfor: -1,
 			registerPassword: '',
 			registerError: 0,
 			registerErrorMessage: '',
@@ -108,7 +109,8 @@ $(function () {
 					self.registerName == '' || self.registerName == null ||
 					self.registerPassword == '' || self.registerPassword == null ||
 					self.registerSex == -1 || self.registerMonth == -1 ||
-					self.registerDay == -1 || self.registerYear == -1
+					self.registerDay == -1 || self.registerYear == -1 ||
+					self.registerLookfor == -1
 					) {
 					self.registerError = 1;
 					self.registerErrorMessage = '请输入必要的信息';
@@ -123,7 +125,6 @@ $(function () {
 					$('.r_loader').addClass('disappear');
 					return;
 				}
-
 				$.post('/account/register', {
 					_token:_token,
 					email: self.registerEmail,
@@ -132,7 +133,8 @@ $(function () {
 					sex: self.registerSex,
 					day: self.registerDay,
 					month: self.registerMonth,
-					year: self.registerYear
+					year: self.registerYear,
+					lookfor:self.registerLookfor
 				}, function(data) {
 					if (data.code == 1) {
 						self.registerSuccess = 1;
