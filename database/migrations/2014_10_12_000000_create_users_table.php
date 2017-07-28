@@ -48,6 +48,7 @@ class CreateUsersTable extends Migration
             $table->string('language')->nullable();
             $table->integer('child')->default(-1);
             $table->integer('pr')->default(-1);
+            $table->integer('lookfor')->default(-1);
             $table->rememberToken();
             $table->timestamps();
         });

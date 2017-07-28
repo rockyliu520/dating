@@ -107,6 +107,7 @@ class AccountController extends Controller
 			'education' => '-1',
 			'bodyType' => '-1',
 			'status' => '-1',
+			'lookfor' => $data['lookfor'],
 			'job' => '其他',
 		]);
 

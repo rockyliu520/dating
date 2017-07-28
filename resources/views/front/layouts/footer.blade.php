@@ -125,7 +125,6 @@
 		Dropzone.autoDiscover = false;
 
 		if (location.pathname.indexOf('/account/dashboard') != -1) {
-
 			var vue = new Vue({
 				el: '#r_dashboard',
 				data: {
@@ -415,7 +414,6 @@
 		}
 
 		if (location.pathname.indexOf('/account/profile') != -1) {
-			
 			$("#r_state_select").on("click", function(){
 				$(this).toggleClass("be-dropdown-active");
 				$(this).find(".drop-down-list").stop().slideToggle();
@@ -535,8 +533,6 @@
 
 				}
 			})	
-
-			
 		}
 	</script>
 	</body>
