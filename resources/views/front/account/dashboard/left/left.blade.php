@@ -3,7 +3,11 @@
 		<div class="be-user-detail">
 			<!-- <a class="be-ava-user style-2" href="/detail/{{ Auth::user()->id }}" target="_blank"> -->
 			<a class="be-ava-user style-2" data-toggle="modal" href='#r_profile_image_modal' v-on:click="changeImage()">
-				<img src="{{ Auth::user()->image }}" alt=""> 
+				@if(Auth::user()->image == '' || Auth::user()->image == null)
+					<img src="/img/user.png" alt="omg">
+				@else
+					<img src="{{ Auth::user()->image }}" alt=""> 
+				@endif
 			</a>
 			
 			<p data-toggle="modal" href='#r_profile_image_modal' v-on:click="changeImage()">点击更换头像</p>
