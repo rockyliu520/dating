@@ -61,7 +61,7 @@
 			<div class="container-fluid custom-container">
 				<div class="col-md-12 footer-end clearfix">
 					<div class="left">
-						<span class="copy">© 2017. All rights reserved. <span class="white"><a href="blog-detail-2.html"> 寂寞先生</a></span></span>
+						<span class="copy">© 2017. All rights reserved. <span class="white"><a href="#"> 单身男女</a></span></span>
 					</div>
 					<div class="right">
 						<a class="btn color-7 size-2 hover-9" href="/about-us">关于我们</a>

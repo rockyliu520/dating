@@ -12,8 +12,8 @@
 	<div class="head-bg">
 		<div class="head-bg-img"></div>
 		<div class="head-bg-content">
-			<h1>寂寞先生</h1>
-			<p>每个人都有属于自己的艳遇</p>
+			<h1>单身男女</h1>
+			<p>每个人都有属于自己的<strong>幸福</strong></p>
 			@if(!Auth::check())
 				<a class=" btn color-3 size-1 hover-6" data-toggle="modal" href='#r_account_modal'>
 					<i class="fa fa-lock"></i>现在注册账号
