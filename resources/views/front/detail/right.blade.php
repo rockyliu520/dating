@@ -8,17 +8,17 @@
 		</div>
 		<div class="blog-content popup-gallery be-large-post-align">
 			<div class="r_detail_photo">
-			    <a class="popup-a" href="/img/sample/1.jpg">
-					<img src="/img/sample/1.jpg" alt="" class="img-responsive">
+			    <a class="popup-a" href="{{ $url }}/img/sample/1.jpg">
+					<img src="{{ $url }}/img/sample/1.jpg" alt="" class="img-responsive">
 				</a>
-				<a class="popup-a" href="/img/sample/2.jpg">
-					<img src="/img/sample/2.jpg" alt="" class="img-responsive">
+				<a class="popup-a" href="{{ $url }}/img/sample/2.jpg">
+					<img src="{{ $url }}/img/sample/2.jpg" alt="" class="img-responsive">
 				</a>
-				<a class="popup-a" href="/img/sample/3.jpg">
-					<img src="/img/sample/3.jpg" alt="" class="img-responsive">
+				<a class="popup-a" href="{{ $url }}/img/sample/3.jpg">
+					<img src="{{ $url }}/img/sample/3.jpg" alt="" class="img-responsive">
 				</a>
-				<a class="popup-a" href="/img/sample/4.jpg">
-					<img src="/img/sample/4.jpg" alt="" class="img-responsive">
+				<a class="popup-a" href="{{ $url }}/img/sample/4.jpg">
+					<img src="{{ $url }}/img/sample/4.jpg" alt="" class="img-responsive">
 				</a>
 			</div>
 			<!-- <h5 class="be-post-title to">
@@ -50,23 +50,23 @@
 					<div class="swiper-container thumbnails-preview" data-autoplay="0" data-loop="1" data-speed="500" data-center="0" data-slides-per-view="1">
 		                <div class="swiper-wrapper">
 	                    	<div class="swiper-slide active" data-val="0">
-	                    		 <img class="img-responsive img-full" src="/img/sample/1.jpg" alt="">
+	                    		 <img class="img-responsive img-full" src="{{ $url }}/img/sample/1.jpg" alt="">
 	                    		 <div class="slider-text">{{ $user->description }}</div>
 	                    	</div>
 	                    	<div class="swiper-slide" data-val="1">
-	                    		 <img class="img-responsive img-full" src="/img/sample/2.jpg" alt="">
+	                    		 <img class="img-responsive img-full" src="{{ $url }}/img/sample/2.jpg" alt="">
 	                    		 <div class="slider-text">{{ $user->description }}</div>			                    		 
 	                    	</div>
 	                    	<div class="swiper-slide" data-val="2">
-	                    		 <img class="img-responsive img-full" src="/img/sample/1.jpg" alt="">
+	                    		 <img class="img-responsive img-full" src="{{ $url }}/img/sample/1.jpg" alt="">
 	                    		 <div class="slider-text">{{ $user->description }}</div>			                    		 
 	                    	</div>
 	                    	<div class="swiper-slide" data-val="3">
-	                    		 <img class="img-responsive img-full" src="/img/sample/1.jpg" alt="">
+	                    		 <img class="img-responsive img-full" src="{{ $url }}/img/sample/1.jpg" alt="">
 	                    		 <div class="slider-text">{{ $user->description }}</div>			                    		 
 	                    	</div>
 	                    	<div class="swiper-slide" data-val="4">
-	                    		 <img class="img-responsive img-full" src="/img/sample/5.jpg" alt="">
+	                    		 <img class="img-responsive img-full" src="{{ $url }}/img/sample/5.jpg" alt="">
 	                    		 <div class="slider-text">{{ $user->description }}</div>			                    		 
 	                    	</div>
 	                    </div>
@@ -81,19 +81,19 @@
 		            data-add-slides="5">
 		                <div class="swiper-wrapper">
 							<div class="swiper-slide current active" data-val="0">
-								<img src="/img/sample/1.jpg" alt="">
+								<img src="{{ $url }}/img/sample/1.jpg" alt="">
 							</div>
 							<div class="swiper-slide" data-val="1">
-								<img src="/img/sample/2.jpg" alt="">
+								<img src="{{ $url }}/img/sample/2.jpg" alt="">
 							</div>
 							<div class="swiper-slide" data-val="2">
-								<img src="/img/sample/3.jpg" alt="">
+								<img src="{{ $url }}/img/sample/3.jpg" alt="">
 							</div>
 							<div class="swiper-slide" data-val="3">
-								<img src="/img/sample/4.jpg" alt="">
+								<img src="{{ $url }}/img/sample/4.jpg" alt="">
 							</div>
 							<div class="swiper-slide" data-val="4">
-								<img src="/img/sample/5.jpg" alt="">
+								<img src="{{ $url }}/img/sample/5.jpg" alt="">
 							</div>
 						</div>
 						<div class="pagination hidden"></div>
@@ -109,7 +109,7 @@
 			<div class="tags_block clearfix">
 				<ul>
 					@foreach($hobby as $h)
-						<li><a href="#">{{ $h->hobby }}</a></li>
+						<li><a href="{{ $url }}#">{{ $h->hobby }}</a></li>
 					@endforeach
 				</ul>
 			</div>
@@ -118,18 +118,18 @@
 	<div class="row">
 		<div class="col-md-4">
 			<div class="be-post">
-				<a href="blog-detail-2.html" class="be-img-block">
-				<img src="/img/p3.jpg" alt="omg">
+				<a href="{{ $url }}blog-detail-2.html" class="be-img-block">
+				<img src="{{ $url }}/img/p3.jpg" alt="omg">
 				</a>
-				<a href="blog-detail-2.html" class="be-post-title">Colors of Ramadan</a>
+				<a href="{{ $url }}blog-detail-2.html" class="be-post-title">Colors of Ramadan</a>
 				<span>
-					<a href="blog-detail-2.html" class="be-post-tag">Interaction Design</a>, 
-					<a href="blog-detail-2.html" class="be-post-tag">UI/UX</a>,  
-					<a href="blog-detail-2.html" class="be-post-tag">Web Design</a>
+					<a href="{{ $url }}blog-detail-2.html" class="be-post-tag">Interaction Design</a>, 
+					<a href="{{ $url }}blog-detail-2.html" class="be-post-tag">UI/UX</a>,  
+					<a href="{{ $url }}blog-detail-2.html" class="be-post-tag">Web Design</a>
 				</span>
 				<div class="author-post">
-					<img src="/img/a5.png" alt="" class="ava-author">
-					<span>by <a href="blog-detail-2.html">Hoang Nguyen</a></span>
+					<img src="{{ $url }}/img/a5.png" alt="" class="ava-author">
+					<span>by <a href="{{ $url }}blog-detail-2.html">Hoang Nguyen</a></span>
 				</div>
 				<div class="info-block">
 					<span><i class="fa fa-thumbs-o-up"></i> 360</span>
@@ -140,18 +140,18 @@
 		</div>
 		<div class="col-md-4">
 			<div class="be-post">
-				<a href="blog-detail-2.html" class="be-img-block">
-				<img src="/img/p4.jpg" alt="omg">
+				<a href="{{ $url }}blog-detail-2.html" class="be-img-block">
+				<img src="{{ $url }}/img/p4.jpg" alt="omg">
 				</a>
-				<a href="blog-detail-2.html" class="be-post-title">Leaving Home - L'Officiel Ukraine</a>
+				<a href="{{ $url }}blog-detail-2.html" class="be-post-title">Leaving Home - L'Officiel Ukraine</a>
 				<span>
-					<a href="blog-detail-2.html" class="be-post-tag">Interaction Design</a>, 
-					<a href="blog-detail-2.html" class="be-post-tag">UI/UX</a>,  
-					<a href="blog-detail-2.html" class="be-post-tag">Web Design</a>
+					<a href="{{ $url }}blog-detail-2.html" class="be-post-tag">Interaction Design</a>, 
+					<a href="{{ $url }}blog-detail-2.html" class="be-post-tag">UI/UX</a>,  
+					<a href="{{ $url }}blog-detail-2.html" class="be-post-tag">Web Design</a>
 				</span>
 				<div class="author-post">
-					<img src="/img/a5.png" alt="" class="ava-author">
-					<span>by <a href="blog-detail-2.html">Hoang Nguyen</a></span>
+					<img src="{{ $url }}/img/a5.png" alt="" class="ava-author">
+					<span>by <a href="{{ $url }}blog-detail-2.html">Hoang Nguyen</a></span>
 				</div>
 				<div class="info-block">
 					<span><i class="fa fa-thumbs-o-up"></i> 360</span>
@@ -162,18 +162,18 @@
 		</div>
 		<div class="col-md-4">
 			<div class="be-post">
-				<a href="blog-detail-2.html" class="be-img-block">
-				<img src="/img/p5.jpg" alt="omg">
+				<a href="{{ $url }}blog-detail-2.html" class="be-img-block">
+				<img src="{{ $url }}/img/p5.jpg" alt="omg">
 				</a>
-				<a href="blog-detail-2.html" class="be-post-title">Drive Your World</a>
+				<a href="{{ $url }}blog-detail-2.html" class="be-post-title">Drive Your World</a>
 				<span>
-					<a href="blog-detail-2.html" class="be-post-tag">Interaction Design</a>, 
-					<a href="blog-detail-2.html" class="be-post-tag">UI/UX</a>,  
-					<a href="blog-detail-2.html" class="be-post-tag">Web Design</a>
+					<a href="{{ $url }}blog-detail-2.html" class="be-post-tag">Interaction Design</a>, 
+					<a href="{{ $url }}blog-detail-2.html" class="be-post-tag">UI/UX</a>,  
+					<a href="{{ $url }}blog-detail-2.html" class="be-post-tag">Web Design</a>
 				</span>
 				<div class="author-post">
-					<img src="/img/a9.png" alt="" class="ava-author">
-					<span>by <a href="blog-detail-2.html">Hoang Nguyen</a></span>
+					<img src="{{ $url }}/img/a9.png" alt="" class="ava-author">
+					<span>by <a href="{{ $url }}blog-detail-2.html">Hoang Nguyen</a></span>
 				</div>
 				<div class="info-block">
 					<span><i class="fa fa-thumbs-o-up"></i> 360</span>

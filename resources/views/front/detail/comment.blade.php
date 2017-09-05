@@ -7,7 +7,7 @@
 	<div class="be-comment">
 			<div class="be-img-comment">	
 				<a href="blog-detail-2.html">
-					<img src="/img/c1.png" alt="" class="be-ava-comment">
+					<img src="{{ $url }}/img/c1.png" alt="" class="be-ava-comment">
 				</a>
 			</div>
 			<div class="be-comment-content">
@@ -31,7 +31,7 @@
 	<div class="be-comment">
 		<div class="be-img-comment">	
 				<a href="blog-detail-2.html">
-					<img src="/img/c2.png" alt="" class="be-ava-comment">
+					<img src="{{ $url }}/img/c2.png" alt="" class="be-ava-comment">
 				</a>
 			</div>
 			<div class="be-comment-content">
@@ -53,7 +53,7 @@
 	<div class="be-comment">
 		<div class="be-img-comment">	
 				<a href="blog-detail-2.html">
-					<img src="/img/c3.png" alt="" class="be-ava-comment">
+					<img src="{{ $url }}/img/c3.png" alt="" class="be-ava-comment">
 				</a>
 			</div>
 			<div class="be-comment-content">

@@ -3,7 +3,7 @@
 @section('index')
 <!-- MAIN CONTENT -->
 <div class="head-bg style-2">
-	<div class="head-bg-img"><img class="center-image" src="/img/bg-4.jpg" alt=""></div>
+	<div class="head-bg-img"><img class="center-image" src="{{ $url }}/img/bg-4.jpg" alt=""></div>
 	<div class="head-bg-content">
 		<h1>联系我们</h1>
 		<p>提出您宝贵的意见, 您的意见是我们前进的动力</p>
@@ -18,7 +18,7 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-4">
 						<div class="contact-entry">
-							<h4 class="contact-label"><img src="/img/marker.png" alt=""> 地址</h4>
+							<h4 class="contact-label"><img src="{{ $url }}/img/marker.png" alt=""> 地址</h4>
 							<div class="contact-text">
 								<p>New York, BRONX, Morris Park Ave 13</p>
 								<p>New York, Guerlain Street 87</p>
@@ -27,7 +27,7 @@
 					</div>
 					<div class="col-xs-12 col-sm-4">
 						<div class="contact-entry">
-							<h4 class="contact-label"><img src="/img/phone-ico.png" alt=""> 电话</h4>
+							<h4 class="contact-label"><img src="{{ $url }}/img/phone-ico.png" alt=""> 电话</h4>
 							<div class="contact-text">
 								<p><a href="tel:+99123456789001">+99 (123) 456 789 001</a></p>
 								<p><a href="tel:+1234556789">+1 (23) 45 567 89</a></p>
@@ -36,7 +36,7 @@
 					</div>						
 					<div class="col-xs-12 col-sm-4">
 						<div class="contact-entry">
-							<h4 class="contact-label"><img src="/img/mail-ico.png" alt=""> 邮箱</h4>
+							<h4 class="contact-label"><img src="{{ $url }}/img/mail-ico.png" alt=""> 邮箱</h4>
 							<div class="contact-text">
 								<p><a href="mailto:NRGNetwork@contact.com">NRGNetwork@contact.com</a></p>
 								<p><a href="mailto:Support@gmail.com">Support@gmail.com</a></p>
@@ -60,25 +60,25 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-6">
 						<div class="form-group fl_icon">
-							<div class="icon"><img src="/img/user-g-ico.png" alt=""></div>
+							<div class="icon"><img src="{{ $url }}/img/user-g-ico.png" alt=""></div>
 							<input class="form-input" type="text" required="" placeholder="您的名字">
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 fl_icon">
 						<div class="form-group fl_icon">
-							<div class="icon"><img src="/img/subject-ico.png" alt=""></div>
+							<div class="icon"><img src="{{ $url }}/img/subject-ico.png" alt=""></div>
 							<input class="form-input" type="text" required="" placeholder="意见标题">
 						</div>
 					</div>						
 					<div class="col-xs-12 col-sm-6 fl_icon">
 						<div class="form-group fl_icon">
-							<div class="icon"><img src="/img/mail-g-ico.png" alt=""></div>
+							<div class="icon"><img src="{{ $url }}/img/mail-g-ico.png" alt=""></div>
 							<input class="form-input" type="text" required="" placeholder="您的邮箱">
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 fl_icon">
 						<div class="form-group fl_icon">
-							<div class="icon"><img src="/img/phone-g-ico.png" alt=""></div>
+							<div class="icon"><img src="{{ $url }}/img/phone-g-ico.png" alt=""></div>
 							<input class="form-input" type="text" required="" placeholder="您的电话">
 						</div>
 					</div>						

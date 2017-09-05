@@ -78,7 +78,7 @@ class ImageRepository
             File::makeDirectory($full_image_path.DIRECTORY_SEPARATOR.'icon', 0777, true);
             // File::makeDirectory(storage_path('app/blogpost/' . $postId));
         }
-
+        
         if ( File::exists( $full_image_path ) )
         {
             // Generate token for image
@@ -89,8 +89,8 @@ class ImageRepository
             return $filename . '-' . $imageToken . '.' . $extension;
         }
         
-        // $pathname = $full_image_path.DIRECTORY_SEPARATOR.$filename . '.' . $extension;
         // return $pathname;
+        // $pathname = $full_image_path.DIRECTORY_SEPARATOR.$filename . '.' . $extension;
         return $filename . '.' . $extension;
     }
 

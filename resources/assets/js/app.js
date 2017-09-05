@@ -324,49 +324,49 @@ $(function () {
 
 		// var ctx = document.getElementById('myChart').getContext('2d');
 
-		var options = {
-			title: {
-				display:true,
-				text: '最近7天来访记录'
-			},
-		    scaleFontColor : "rgba(0,0,0,1)",
-		    scaleLineColor : "rgba(0,0,0,0.1)",
-		    scaleGridLineColor : "rgba(0,0,0,0.1)",
-		    scaleShowLabels : false,
-		    scaleShowHorizontalLines : false,
-		    bezierCurve : false,
-		    pointDot : true,
-		    pointDotRadius : 5,
-		    pointDotStrokeWidth : 2,
-		    scaleOverride : true,
-		    scaleSteps : 6,
-		    scaleStepWidth : 100,
-		    responsive : true,
-		    showTooltips: true,
-		    tooltipTemplate: "<%= value %> " + "Students",
-		    tooltipFontSize: 16,
-		    tooltipYPadding: 12,
-		    tooltipXPadding: 12,
-		    tooltipCornerRadius: 3,
-		    tooltipFillColor: "#3797d3",
-		    onAnimationComplete : function() {
-		        var arrSelector = [];
-		        this.datasets[0].points.forEach(function(point){
-		            if(point.label == 'WED'){
-		                arrSelector.push(point);
-		            }
-		        });
+		// var options = {
+		// 	title: {
+		// 		display:true,
+		// 		text: '最近7天来访记录'
+		// 	},
+		//     scaleFontColor : "rgba(0,0,0,1)",
+		//     scaleLineColor : "rgba(0,0,0,0.1)",
+		//     scaleGridLineColor : "rgba(0,0,0,0.1)",
+		//     scaleShowLabels : false,
+		//     scaleShowHorizontalLines : false,
+		//     bezierCurve : false,
+		//     pointDot : true,
+		//     pointDotRadius : 5,
+		//     pointDotStrokeWidth : 2,
+		//     scaleOverride : true,
+		//     scaleSteps : 6,
+		//     scaleStepWidth : 100,
+		//     responsive : true,
+		//     showTooltips: true,
+		//     tooltipTemplate: "<%= value %> " + "Students",
+		//     tooltipFontSize: 16,
+		//     tooltipYPadding: 12,
+		//     tooltipXPadding: 12,
+		//     tooltipCornerRadius: 3,
+		//     tooltipFillColor: "#3797d3",
+		//     onAnimationComplete : function() {
+		//         var arrSelector = [];
+		//         this.datasets[0].points.forEach(function(point){
+		//             if(point.label == 'WED'){
+		//                 arrSelector.push(point);
+		//             }
+		//         });
 
-		        this.showTooltip(arrSelector, true);          
-		    },
-		    tooltipEvents: []
-		}
+		//         this.showTooltip(arrSelector, true);          
+		//     },
+		//     tooltipEvents: []
+		// }
 
-		var myBarChart = new Chart(ctx, {
-		    type: 'line',
-		    data: data,
-		    options: options
-		});
+		// var myBarChart = new Chart(ctx, {
+		//     type: 'line',
+		//     data: data,
+		//     options: options
+		// });
 
 		var tabFinish = 0;
 		$('.nav-tab-item').on('click',  function(){

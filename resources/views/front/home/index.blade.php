@@ -7,6 +7,7 @@
 		background: #2e3542;
 	}
 </style>
+
 @section('index')
 	
 	<div class="head-bg">
@@ -18,11 +19,11 @@
 				<a class=" btn color-3 size-1 hover-6" data-toggle="modal" href='#r_account_modal'>
 					<i class="fa fa-lock"></i>现在注册账号
 				</a>
-
 			@endif
 		</div>
 	</div>
-	<!-- @include('front.home.search') -->
+	
+	@include('front.home.search')
 	<div class="container-fluid custom-container">
 		<div class="row">
 			@include('front.home.leftfilter')
@@ -34,17 +35,17 @@
 								@if(Auth::check())
 									<a href="/detail/{{ $u->id }}" class="be-img-block">
 										@if($u->image == '')
-											<img src="/img/users/1.jpg" alt="omg">
+											<img src="{{ $url }}/img/users/1.jpg" alt="omg">
 										@else
-											<img src="{{ $u->image }}" alt="omg">
+											<img src="{{ $url }}/{{ $u->image }}" alt="omg">
 										@endif
 									</a>
 								@else
 									<a class="be-img-block r_home_require_login" data-toggle="modal" href='#r_account_modal' data-message="请先登录后查看">
 										@if($u->image == '')
-											<img src="/img/users/1.jpg" alt="omg">
+											<img src="{{ $url }}/img/users/1.jpg" alt="omg">
 										@else
-											<img src="{{ $u->image }}" alt="omg">
+											<img src="{{ $url }}/{{ $u->image }}" alt="omg">
 										@endif
 									</a>
 								@endif
@@ -89,7 +90,7 @@
 						@else
 						<a href="#" data-toggle="modal" href='#r_account_modal' data-message="请先登录后查看">
 						@endif
-							<img class="img-responsive img-full" src="{{ $r->image }}" alt="">
+							<img src="{{ $url }}/{{ $r->image }}" class="img-responsive img-full" alt="">
 	            	 	</a>
             	 	</div>
         	 	@endforeach

@@ -51,4 +51,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Models\User', 'favourite', 'followingId', 'followerId');
     }
+
+    public function hasAvatar()
+    {
+        return $this->hasMany('App\Models\Image', 'userId')->where('isMain', 1);
+    }
 }

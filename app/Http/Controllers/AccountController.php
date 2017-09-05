@@ -25,6 +25,10 @@ class AccountController extends Controller
 
 	public function __construct()
 	{
+		// local
+        // view()->share('url', '');
+        // host
+        view()->share('url', '/public/');
 		$this->middleware('auth', ['except' => ['signin', 'signup', 'register', 'login', 'signout']]);
 	}
 
@@ -153,6 +157,8 @@ class AccountController extends Controller
 
 	public function dashboard()
 	{	
+		// dd(Auth::user()->hasAvatar[0]->image);
+		
 		// dd(base_path());
 		// dd(Config::get('images.full_size'));
 		// dd(public_path('img/users'));
@@ -198,7 +204,9 @@ class AccountController extends Controller
 			->where('userId', Auth::user()->id)->whereIn(DB::raw('da_question.id'), [1,2,3,4,5,6,7])->get();
 
 		$listHobby = ['健美操','篮球','保龄球','露营','纸牌游戏','自行车','跳舞','钓鱼 / 狩猎','高尔夫球','远足','武术','乐器','攀岩','跑步','唱歌','滑雪 / 滑雪板','足球','游泳 / 水上运动','网球','旅游','排球','重量 / 健身房','瑜伽 / 普拉提','其他'];
-
+		
+		$avatar = User::find(Auth::user()->id)->hasAvatar;
+		
 		$data = array(
 			'questions' => $questions,
 			'last7' => $last7,
@@ -207,7 +215,8 @@ class AccountController extends Controller
 			'visitors' => $visitor,
 			'hobby' => $h,
 			'compareHobby' => $hobby,
-			'listHobby' => $listHobby
+			'listHobby' => $listHobby,
+			'avatar' => $avatar
 		);
 
 		return view('front.account.dashboard.dashboard', $data);
@@ -314,6 +323,7 @@ class AccountController extends Controller
 		$data = $request->all();
 		
 		$response = $this->image->upload($data, Auth::user()->id, 1);
+
         return $response;
 	}
 

@@ -3,10 +3,10 @@
 		<div class="be-user-detail">
 			<!-- <a class="be-ava-user style-2" href="/detail/{{ Auth::user()->id }}" target="_blank"> -->
 			<a class="be-ava-user style-2" data-toggle="modal" href='#r_profile_image_modal' v-on:click="changeImage()">
-				@if(Auth::user()->image == '' || Auth::user()->image == null)
-					<img src="/img/user.png" alt="omg">
+				@if($avatar->count() == 0)
+					<img src="{{ $url }}/img/user.png" alt="omg">
 				@else
-					<img src="{{ Auth::user()->image }}" alt=""> 
+					<img src="{{ $url }}/{{ Auth::user()->image }}" alt=""> 
 				@endif
 			</a>
 			
@@ -51,6 +51,7 @@
 			<a href="/detail/{{ Auth::user()->id }}" target="_blank" class="be-ava-center btn btn-message color-4 size-1 hover-7 btn-block">
 				<i class="fa fa-envelope-o"></i>查看我的首页
 			</a>
+			
 			<!-- <div class="be-ava-center btn btn-message color-4 size-1 hover-7 btn-block">
 				<i class="fa fa-envelope-o"></i>我的信息
 			</div> -->
