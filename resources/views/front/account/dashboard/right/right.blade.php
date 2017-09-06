@@ -61,7 +61,7 @@
 									@if($v->image == '' || $v->image == null)
 										<img src="{{ $url }}/img/user.png" alt="omg">
 									@else
-										<img src="{{ $url }}{{ $v->image }}" alt="omg">
+										<img src="{{ $url }}/{{ $v->image }}" alt="omg">
 									@endif
 								</a>
 
@@ -96,7 +96,7 @@
 						<div class="col-ml-12 col-xs-6 col-sm-4">
 							<div class="be-post">
 								<a href="/detail/{{ $v->id }}" class="be-img-block" target="_blank">
-									<img src="{{ $url }}{{ $v->image }}" alt="omg">
+									<img src="{{ $url }}/{{ $v->image }}" alt="omg">
 								</a>
 
 								<?php 

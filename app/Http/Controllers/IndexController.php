@@ -18,9 +18,9 @@ class IndexController extends Controller
     public function __construct()
     {
         // local
-        // view()->share('url', '');
+        view()->share('url', '');
         // host
-        view()->share('url', '/public/');
+        // view()->share('url', '/public/');
     }
 
     public function index()
