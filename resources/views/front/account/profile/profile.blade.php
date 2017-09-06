@@ -40,9 +40,9 @@
 							<div class="be-change-ava">
 								<a class="be-ava-user style-2" href="blog-detail-2.html">
 									@if(Auth::user()->image == '')
-									<img src="/img/ava_10.jpg" alt=""> 
+									<img src="{{ $url }}/img/ava_10.jpg" alt=""> 
 									@else
-									<img src="{{ Auth::user()->image }}" alt=""> 
+									<img src="{{ $url }}{{ Auth::user()->image }}" alt=""> 
 									@endif
 								</a>
 								<a class="btn color-4 size-2 hover-7">更换头像</a>

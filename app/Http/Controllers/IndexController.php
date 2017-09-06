@@ -17,11 +17,20 @@ class IndexController extends Controller
 {
     public function __construct()
     {
-
+        // local
+        view()->share('url', '');
+        // host
+        // view()->share('url', '/public/');
     }
 
     public function index()
     {   
+        // $user = User::all();
+        // foreach ($user as $key => $value) {
+        //     $result = substr($value->image, 1);
+        //     User::where('id', $value->id)->update(['image' => $result]);
+        // }
+        
         if (Auth::check()) {
             $user = User::select('id', 'fname', 'location', 'sex', 'image', 'year')
                 ->where('id', '!=', Auth::user()->id)

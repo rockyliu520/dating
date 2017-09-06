@@ -10,7 +10,7 @@
 			<div class="noto-content clearfix">
 				<div class="noto-img">	
 					<a href="page1.html">
-						<img src="/img/c1.png" alt="" class="be-ava-comment">
+						<img src="{{ $url }}/img/c1.png" alt="" class="be-ava-comment">
 					</a>
 				</div>
 				<div class="noto-text">
@@ -26,7 +26,7 @@
 			<div class="noto-content clearfix">
 				<div class="noto-img">	
 					<a href="page1.html">
-						<img src="/img/c6.jpg" alt="" class="be-ava-comment">
+						<img src="{{ $url }}/img/c6.jpg" alt="" class="be-ava-comment">
 					</a>
 				</div>
 				<div class="noto-text">
@@ -37,11 +37,11 @@
 					<div class="noto-message">
 						Saved “<a href="page1.html">Omni-onepage app template</a>” to Inspiration
 						<a class="portfolio-link type-2 clearfix" href="page1.html">
-							<img src="/img/p_link_23.jpg" alt="">
-							<img src="/img/p_link_31.jpg" alt="">
-							<img src="/img/p_link_32.jpg" alt="">
-							<img src="/img/p_link_33.jpg" alt="">
-							<img src="/img/p_link_34.jpg" alt="">
+							<img src="{{ $url }}/img/p_link_23.jpg" alt="">
+							<img src="{{ $url }}/img/p_link_31.jpg" alt="">
+							<img src="{{ $url }}/img/p_link_32.jpg" alt="">
+							<img src="{{ $url }}/img/p_link_33.jpg" alt="">
+							<img src="{{ $url }}/img/p_link_34.jpg" alt="">
 							<div class="color_bg">
 								<span>view portfolio</span>
 								<span class="child"></span>
@@ -55,7 +55,7 @@
 			<div class="noto-content clearfix">
 				<div class="noto-img">	
 					<a href="page1.html">
-						<img src="/img/c7.jpg" alt="" class="be-ava-comment">
+						<img src="{{ $url }}/img/c7.jpg" alt="" class="be-ava-comment">
 					</a>
 				</div>
 				<div class="noto-text">
@@ -65,7 +65,7 @@
 					</div>
 					<div class="noto-message">
 						<a class="noto-left" href="page1.html">
-							<img src="/img/n_pop_1.jpg" alt="">
+							<img src="{{ $url }}/img/n_pop_1.jpg" alt="">
 						</a>
 						Saved “<a href="page1.html">Omni-onepage app template</a>” to Inspiration
 					</div>
@@ -76,7 +76,7 @@
 			<div class="noto-content clearfix">
 				<div class="noto-img">	
 					<a href="page1.html">
-						<img src="/img/c8.jpg" alt="" class="be-ava-comment">
+						<img src="{{ $url }}/img/c8.jpg" alt="" class="be-ava-comment">
 					</a>
 				</div>
 				<div class="noto-text">
@@ -86,7 +86,7 @@
 					</div>
 					<div class="noto-message">
 						<a class="noto-left" href="page1.html">
-							<img src="/img/n_pop_2.jpg" alt="">
+							<img src="{{ $url }}/img/n_pop_2.jpg" alt="">
 						</a>
 						Awesome, love the big whitespace and also everything between :)
 					</div>
@@ -97,7 +97,7 @@
 			<div class="noto-content clearfix">
 				<div class="noto-img">	
 					<a href="page1.html">
-						<img src="/img/c9.jpg" alt="" class="be-ava-comment">
+						<img src="{{ $url }}/img/c9.jpg" alt="" class="be-ava-comment">
 					</a>
 				</div>
 				<div class="noto-text">

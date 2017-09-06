@@ -3,16 +3,17 @@
 
 // Variables
 @import "variables";
-
 @import "alert.scss";
-
 @import "loader.scss";
-
 @import "account/dashboard.scss";
-
 @import "modal.scss";
-
 @import "detail.scss";
+
+// #app input[type="email"]:focus,
+// #app input[type="text"]:focus,
+// #app input[type="password"]:focus {
+// 	border:1px solid #525252 !important;
+// }
 
 .disappear {
 	display: none;
@@ -69,7 +70,6 @@ select:focus {
 	background: #0d58c8 !important; 
 	color: #FFF; 
 }
-
 .r_profile_select:focus,
 .r_profile_select:active {
 	outline: none;
@@ -79,7 +79,6 @@ select:focus {
 	transition: all ease 0.5s;
 	box-shadow: none;
 }
-
 .be-date-block .large-popup-text {
 	margin-bottom: 10px;
 }

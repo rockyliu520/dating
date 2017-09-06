@@ -6,9 +6,9 @@
 		
 		<div class="be-drop-down login-user-down">
 			@if(Auth::user()->image == '')
-				<img class="login-user" src="/img/login.jpg" alt="">
+				<img class="login-user" src="{{ $url }}/img/login.jpg" alt="">
 			@else
-				<img class="login-user" src="{{ Auth::user()->image }}" alt="" style="width:40px;height:40px;">
+				<img class="login-user" src="{{ $url }}{{ Auth::user()->image }}" alt="" style="width:40px;height:40px;">
 			@endif
 			&nbsp;&nbsp;&nbsp;
 			<span class="be-dropdown-content">Hi, <span>{{ Auth::user()->fname }}&nbsp;{{ Auth::user()->lname }}</span></span>

@@ -2,7 +2,7 @@
 	<div class="be-user-block">
 		<div class="be-user-detail">
 			<a class="be-ava-user" href="blog-detail-2.html">
-				<img src="{{ $user->image }}" alt=""> 
+				<img src="{{ $url }}{{ $user->image }}" alt=""> 
 			</a>
 			<?php 
 				$year = date('Y');
@@ -59,7 +59,7 @@
             	<div class="swiper-slide">
                 	<div class="be-post">
 						<a href="blog-detail-2.html" class="be-img-block">
-						<img src="/img/p9.jpg" height="202" width="269" alt="omg">
+						<img src="{{ $url }}/img/p9.jpg" height="202" width="269" alt="omg">
 						</a>
 						<a href="blog-detail-2.html" class="be-post-title">NAHA Finalist Hairstylist of the Year Allen Ruiz</a>
 						<span>
@@ -68,7 +68,7 @@
 							<a href="blog-detail-2.html" class="be-post-tag">Interactiob design</a>
 						</span>
 						<div class="author-post">
-							<img src="/img/ava.png" alt="" class="ava-author">
+							<img src="{{ $url }}/img/ava.png" alt="" class="ava-author">
 							<span>by <a href="blog-detail-2.html">Daniel Ng</a></span>
 						</div>
 						<div class="info-block">
@@ -81,7 +81,7 @@
                 <div class="swiper-slide">
                 	<div class="be-post">
 						<a href="blog-detail-2.html" class="be-img-block">
-						<img src="/img/p9.jpg" height="202" width="269" alt="omg">
+						<img src="{{ $url }}/img/p9.jpg" height="202" width="269" alt="omg">
 						</a>
 						<a href="blog-detail-2.html" class="be-post-title">NAHA Finalist Hairstylist of the Year Allen Ruiz</a>
 						<span>
@@ -90,7 +90,7 @@
 							<a href="blog-detail-2.html" class="be-post-tag">Interactiob design</a>
 						</span>
 						<div class="author-post">
-							<img src="/img/ava.png" alt="" class="ava-author">
+							<img src="{{ $url }}/img/ava.png" alt="" class="ava-author">
 							<span>by <a href="blog-detail-2.html">Daniel Ng</a></span>
 						</div>
 						<div class="info-block">
@@ -103,7 +103,7 @@
                 <div class="swiper-slide">
                 	<div class="be-post">
 						<a href="blog-detail-2.html" class="be-img-block">
-						<img src="/img/p9.jpg" height="202" width="269" alt="omg">
+						<img src="{{ $url }}/img/p9.jpg" height="202" width="269" alt="omg">
 						</a>
 						<a href="blog-detail-2.html" class="be-post-title">NAHA Finalist Hairstylist of the Year Allen Ruiz</a>
 						<span>
@@ -112,7 +112,7 @@
 							<a href="blog-detail-2.html" class="be-post-tag">Interactiob design</a>
 						</span>
 						<div class="author-post">
-							<img src="/img/ava.png" alt="" class="ava-author">
+							<img src="{{ $url }}/img/ava.png" alt="" class="ava-author">
 							<span>by <a href="blog-detail-2.html">Daniel Ng</a></span>
 						</div>
 						<div class="info-block">
@@ -125,7 +125,7 @@
                 <div class="swiper-slide">
                 	<div class="be-post">
 						<a href="blog-detail-2.html" class="be-img-block">
-						<img src="/img/p9.jpg" height="202" width="269" alt="omg">
+						<img src="{{ $url }}/img/p9.jpg" height="202" width="269" alt="omg">
 						</a>
 						<a href="blog-detail-2.html" class="be-post-title">NAHA Finalist Hairstylist of the Year Allen Ruiz</a>
 						<span>
@@ -134,7 +134,7 @@
 							<a href="blog-detail-2.html" class="be-post-tag">Interactiob design</a>
 						</span>
 						<div class="author-post">
-							<img src="/img/ava.png" alt="" class="ava-author">
+							<img src="{{ $url }}/img/ava.png" alt="" class="ava-author">
 							<span>by <a href="blog-detail-2.html">Daniel Ng</a></span>
 						</div>
 						<div class="info-block">

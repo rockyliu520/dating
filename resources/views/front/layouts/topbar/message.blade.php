@@ -10,7 +10,7 @@
 			<div class="noto-content clearfix">
 				<div class="noto-img">	
 					<a href="page1.html">
-						<img src="/img/c1.png" alt="" class="be-ava-comment">
+						<img src="{{ $url }}/img/c1.png" alt="" class="be-ava-comment">
 					</a>
 				</div>
 				<div class="noto-text">
@@ -26,7 +26,7 @@
 			<div class="noto-content clearfix">
 				<div class="noto-img">	
 					<a href="page1.html">
-						<img src="/img/c6.jpg" alt="" class="be-ava-comment">
+						<img src="{{ $url }}/img/c6.jpg" alt="" class="be-ava-comment">
 					</a>
 				</div>
 				<div class="noto-text">
@@ -44,7 +44,7 @@
 			<div class="noto-content clearfix">
 				<div class="noto-img">	
 					<a href="page1.html">
-						<img src="/img/c9.jpg" alt="" class="be-ava-comment">
+						<img src="{{ $url }}/img/c9.jpg" alt="" class="be-ava-comment">
 					</a>
 				</div>
 				<div class="noto-text">
@@ -62,7 +62,7 @@
 			<div class="noto-content clearfix">
 				<div class="noto-img">	
 					<a href="page1.html">
-						<img src="/img/c10.jpg" alt="" class="be-ava-comment">
+						<img src="{{ $url }}/img/c10.jpg" alt="" class="be-ava-comment">
 					</a>
 				</div>
 				<div class="noto-text">

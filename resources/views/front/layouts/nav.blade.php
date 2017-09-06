@@ -1,7 +1,7 @@
 <!-- THE LOADER -->
 <div class="be-loader">
 	<div class="spinner">
-		<img src="/img/logo-loader.png"  alt="">
+		<img src="{{ $url }}/img/logo-loader.png"  alt="">
 		<p class="circle">
 		  <span class="ouro">
 		    <span class="left"><span class="anim"></span></span>
@@ -16,10 +16,10 @@
 		<div class="row no_row row-header">
 			<div class="brand-be">
 				<a href="/">
-					<img class="logo-c active be_logo"  src="/img/logo.png" alt="logo">
-					<img class="logo-c be_logo" src="/img/logo-green.png" alt="logo2">
-					<img  class="logo-c be_logo" src="/img/logo-orang.png" alt="logo3">
-					<img class="logo-c be_logo" src="/img/logo-red.png" alt="logo4">
+					<img class="logo-c active be_logo"  src="{{ $url }}/img/logo.png" alt="logo">
+					<img class="logo-c be_logo" src="{{ $url }}/img/logo-green.png" alt="logo2">
+					<img  class="logo-c be_logo" src="{{ $url }}/img/logo-orang.png" alt="logo3">
+					<img class="logo-c be_logo" src="{{ $url }}/img/logo-red.png" alt="logo4">
 				</a>
 			</div>
 

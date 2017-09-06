@@ -12,7 +12,10 @@ class ApiController extends Controller
 {
     public function __construct()
     {
-
+        // local
+        view()->share('url', '');
+        // host
+        // view()->share('url', '/public/');
     }
 
     public function addOrRmFav(Request $request)

@@ -5,9 +5,9 @@
             	<div class="nav-tab-item active">
                     <span>我的资料</span>
                 </div>    
-                <div class="nav-tab-item ">
+                <!-- <div class="nav-tab-item ">
                     <span>最近来访</span>
-                </div>
+                </div> -->
                 <div class="nav-tab-item ">
                     <span>看过我的</span>
                 </div>
@@ -45,20 +45,24 @@
             		</div>
             	</div>
             </div>   
-            <div class="tab-info "> 
+            <!-- <div class="tab-info "> 
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<canvas id="myChart" style="height:450; width: 100%;"></canvas>
 					</div>
 				</div>
-            </div>
+            </div> -->
             <div class="tab-info">
 				<div class="row">
 					@foreach($visitors as $v)
 						<div class="col-ml-12 col-xs-6 col-sm-4">
 							<div class="be-post">
 								<a href="/detail/{{ $v->id }}" class="be-img-block" target="_blank">
-									<img src="{{ $v->image }}" alt="omg">
+									@if($v->image == '' || $v->image == null)
+										<img src="{{ $url }}/img/user.png" alt="omg">
+									@else
+										<img src="{{ $url }}/{{ $v->image }}" alt="omg">
+									@endif
 								</a>
 
 								<?php 
@@ -92,7 +96,7 @@
 						<div class="col-ml-12 col-xs-6 col-sm-4">
 							<div class="be-post">
 								<a href="/detail/{{ $v->id }}" class="be-img-block" target="_blank">
-									<img src="{{ $v->image }}" alt="omg">
+									<img src="{{ $url }}/{{ $v->image }}" alt="omg">
 								</a>
 
 								<?php 
